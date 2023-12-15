@@ -11,4 +11,6 @@ Part Design best practices:
 - first create all additive features and then all subtractive features, if possible
 - do not attach sketches to Topological Elements (Vertexes, Edges, Faces), always use Elements that dont change, such as the Origin for reference.
 - Use Fillets and Chamfers as the last features
-(More best practices to be added)
+
+
+More best practices to be added
