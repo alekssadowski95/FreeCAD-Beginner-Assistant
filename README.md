@@ -14,3 +14,8 @@ Part Design best practices:
 
 
 More best practices to be added
+
+Also take a look at: 
+[https://wiki.freecad.org/Best_Practices_with_SpreadSheets](https://wiki.freecad.org/Best_Practices_with_SpreadSheets)
+[https://forum.freecad.org/viewtopic.php?t=12738](https://forum.freecad.org/viewtopic.php?t=12738)
+
