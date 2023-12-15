@@ -5,6 +5,13 @@ Analyses a FreeCAD FCStd File containing at least one Part Design Body and gives
 
 This project is related to the FreeCAD-Tutorial-Generator and the FCViewer Platform and adds to the ecosystem of teaching resources for Beginner FreeCAD Users.
 
+
+Types of best practices:
+- ordner of operations
+- Prefered use of specific operations over other ones
+- Prefered parameters for operations
+
+
 Part Design best practices:
 - Follow the plane, sketch, feature workflow
 - only use one closed wire per sketch
@@ -14,11 +21,6 @@ Part Design best practices:
 
 
 More best practices to be added
-
-Types of best practices:
-- ordner of operations
-- Prefered use of specific operations over other ones
-- Prefered parameters for operations
 
 
 Also take a look at: 
