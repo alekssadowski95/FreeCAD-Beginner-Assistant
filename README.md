@@ -28,7 +28,7 @@ Also take a look at:
 - [https://www.youtube.com/playlist?list=PLP1rv37BojTd5NY3E_aqOWUe0uA8J-J1T](https://www.youtube.com/playlist?list=PLP1rv37BojTd5NY3E_aqOWUe0uA8J-J1T)
 
 ## Vision
-Integrate into FCViewer for asynchronous feedback
-Integrate into FreeCAD for realtime feedback
--> Increase the quality of community-created Part Design models
+- Integrate into FCViewer for asynchronous feedback.
+- Integrate into FreeCAD for realtime feedback.
 
+-> Increase the quality of community-created Part Design models.
