@@ -17,7 +17,7 @@ More best practices to be added
 
 Types of best practices:
 - ordner of operations
-- Prefered use of operations over other ones
+- Prefered use of specific operations over other ones
 - Prefered parameters for operations
 
 
