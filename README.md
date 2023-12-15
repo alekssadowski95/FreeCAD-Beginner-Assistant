@@ -7,17 +7,17 @@ This project is related to the FreeCAD-Tutorial-Generator and the FCViewer Platf
 
 
 Types of best practices:
-- ordner of operations
+- Ordner of operations
 - Prefered use of specific operations over other ones
 - Prefered parameters for operations
 
 
 Part Design best practices:
-- Follow the plane, sketch, feature workflow
-- only use one closed wire per sketch
-- first create all additive features and then all subtractive features, if possible
-- do not attach sketches to Topological Elements (Vertexes, Edges, Faces), always use Elements that dont change, such as the Origin for reference.
-- Use Fillets, Chamfers and all other features that are inherently reliant on Topological Element references as the last features
+- [] Follow the plane, sketch, feature workflow
+- [] Only use one closed wire per sketch
+- [] First create all additive features and then all subtractive features, if possible
+- [] Do not attach sketches to Topological Elements (Vertexes, Edges, Faces), always use Elements that dont change, such as the Origin for reference.
+- [] Use Fillets, Chamfers and all other features that are inherently reliant on Topological Element references as the last features
 
 
 More best practices to be added
