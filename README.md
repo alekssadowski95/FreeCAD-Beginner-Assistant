@@ -13,17 +13,17 @@ Types of best practices:
 
 
 Part Design best practices:
-- [] Follow the plane, sketch, feature workflow
-- [] Only use one closed wire per sketch
-- [] First create all additive features and then all subtractive features, if possible
-- [] Do not attach sketches to Topological Elements (Vertexes, Edges, Faces), always use Elements that dont change, such as the Origin for reference.
-- [] Use Fillets, Chamfers and all other features that are inherently reliant on Topological Element references as the last features
+- [ ] Follow the plane, sketch, feature workflow
+- [ ] Only use one closed wire per sketch
+- [ ] First create all additive features and then all subtractive features, if possible
+- [ ] Do not attach sketches to Topological Elements (Vertexes, Edges, Faces), always use Elements that dont change, such as the Origin for reference.
+- [ ] Use Fillets, Chamfers and all other features that are inherently reliant on Topological Element references as the last features
 
 
 More best practices to be added
 
 
-Also take a look at: 
+Also take a look at and integrate into list: 
 - [https://wiki.freecad.org/Best_Practices_with_SpreadSheets](https://wiki.freecad.org/Best_Practices_with_SpreadSheets)
 - [https://forum.freecad.org/viewtopic.php?t=12738](https://forum.freecad.org/viewtopic.php?t=12738)
 - [https://forum.freecad.org/viewtopic.php?t=15432](https://forum.freecad.org/viewtopic.php?t=15432)
