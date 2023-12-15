@@ -10,7 +10,7 @@ Part Design best practices:
 - only use one closed wire per sketch
 - first create all additive features and then all subtractive features, if possible
 - do not attach sketches to Topological Elements (Vertexes, Edges, Faces), always use Elements that dont change, such as the Origin for reference.
-- Use Fillets and Chamfers as the last features
+- Use Fillets, Chamfers and all other features that are inherently reliant on Topological Element references as the last features
 
 
 More best practices to be added
