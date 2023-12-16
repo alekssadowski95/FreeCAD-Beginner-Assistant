@@ -42,6 +42,9 @@ Also take a look at and integrate into list:
 -> How does the code structure look like for this application?: Do it like validators are usually implemented, with a class for each best practice, but that would lead to a million classes. Each best practice needs to have at least one method and data for fail and success. What would be a more lightweight structure for that?
 
 
+First, all best practices with all the required information to implement them get collected in the "freecad-part-design-best-practices.xlsx" spreadsheet.
+
+
 ## Vision
 - Integrate into FCViewer for asynchronous feedback.
 - Integrate into FreeCAD for realtime feedback.
