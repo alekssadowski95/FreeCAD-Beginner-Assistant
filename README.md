@@ -36,7 +36,7 @@ Brainstorming:
   - For fail, feedback text consists of a description of what could be improved and why its a problem.
 - Return score in % and a rank (% intervalls), based on % of best practices that have been applied, each best practice having a weight assigned to them.
 
-How does a code structure look like for this application?
+-> How does the code structure look like for this application?
 
 
 ## Vision
