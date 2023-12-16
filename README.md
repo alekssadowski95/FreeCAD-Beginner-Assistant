@@ -36,7 +36,7 @@ Also take a look at and integrate into list:
   - For fail, feedback text consists of a description of what could be improved and why its a problem.
 - Return score in % and a badge (% intervalls), based on % of best practices that have been applied, each best practice having a weight (0.0 - 1.0) assigned to them.
 
--> How does the code structure look like for this application?
+-> How does the code structure look like for this application?: Do it like validatory are usually implemented, with a class for each best practice, but that would lead to a million classes. Each best practice needs to have at least one method and data for fail and success. What would be a more lightweight structure for that?
 
 
 ## Vision
