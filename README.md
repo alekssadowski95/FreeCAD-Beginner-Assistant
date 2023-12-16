@@ -29,6 +29,11 @@ Also take a look at and integrate into list:
 - [https://forum.freecad.org/viewtopic.php?t=15432](https://forum.freecad.org/viewtopic.php?t=15432)
 - [https://www.youtube.com/playlist?list=PLP1rv37BojTd5NY3E_aqOWUe0uA8J-J1T](https://www.youtube.com/playlist?list=PLP1rv37BojTd5NY3E_aqOWUe0uA8J-J1T)
 
+
+Brainstorming:
+- Multiple methods that check if the best practice has been applied, and a feedback text for success and fail. For success, feedback text consists of a description of the best practice that has been applied and why it's important. For fail, feedback text consists of a description of what could be improved and why its a problem.
+- Give score, based on % of best practices that have been applied.
+
 ## Vision
 - Integrate into FCViewer for asynchronous feedback.
 - Integrate into FreeCAD for realtime feedback.
