@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<package format="1" xmlns="https://wiki.freecad.org/Package_Metadata">
+  <name>FreeCAD-Beginner-Assistant</name>
+  <description>Best practices modeling assistant for the Part and Sketcher workbench.</description>
+  <version>1.0</version>
+  <date>2024-05-19</date>
+  <author>Aleksander Sadowski(https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant)</author>
+  <maintainer email="alekey@hotmail.de">Aleksander Sadowski</maintainer>
+  <maintainer email="elizabethharasymiw@gmail.com">Elizabeth Harasymiw</maintainer>
+  <license file="LICENSE">LGPLv2.1</license>
+  <url type="repository" branch="main">https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant</url>
+  <url type="bugtracker">https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant/issues</url>
+  <icon>Icons/FreeCAD-Beginner-Assistant.svg</icon>
+
+  <content>
+    <workbench>
+      <classname>FreeCAD-Beginner-Assistant</classname>
+      <subdirectory>./</subdirectory>
+      <icon>Icons/FreeCAD-Beginner-Assistant.svg</icon>
+    </workbench>
+  </content>
+
+</package>
