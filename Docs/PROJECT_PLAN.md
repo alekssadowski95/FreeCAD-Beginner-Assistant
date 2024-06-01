@@ -1,5 +1,5 @@
 # FreeCAD Beginner Assistant
-The FreeCAD Beginner Assistant analyses a FreeCAD FCStd File containing at least one Part Design Body and gives realtime or asynchronous recommendations/hints, based on best practices, on what was done well and what can be improved. Aims to increase the quality of community-created Part Design models. This project is related to the FreeCAD-Tutorial-Generator and the FCViewer Platform and adds to the ecosystem of learning resources for Beginner FreeCAD Users.
+The FreeCAD Beginner Assistant analyses a FreeCAD FCStd File containing at least one Part Design Body and gives realtime or asynchronous feedback, based on best practices, on what was done well and what can be improved.
 
 
 All best practices with all the required information to implement them get collected in the "freecad-part-design-best-practices.xlsx" spreadsheet.
@@ -31,7 +31,7 @@ Potential sources for more best practices to be integrated in to spreadsheet (re
 
 
 ## Vision
-- Integrate into FCViewer for asynchronous feedback.
-- Integrate into FreeCAD for realtime feedback.
+- Get asynchronous feedback with best practises in FCViewer.
+- Get realtime feedback with best practises in FreeCAD.
 
--> Increase the quality of community-created Part Design projects.
+-> Increase the quality of community-created projects and increase the popularity of FreeCAD as a result.
