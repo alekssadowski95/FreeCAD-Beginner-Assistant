@@ -2,7 +2,7 @@
 The FreeCAD Beginner Assistant analyses a FreeCAD FCStd File containing at least one Part Design Body and gives realtime or asynchronous feedback, based on best practices, on what was done well and what can be improved.
 
 
-All best practices with all the required information to implement them get collected in the "freecad-part-design-best-practices.xlsx" spreadsheet.
+All best practices with all the required information to implement them get collected in the [FreeCAD Best Practices](https://docs.google.com/spreadsheets/d/1ZreqK_yZHuSeZXfrCFB_nBAetcBOc8D6WC6QzSrWz-c) google docs spreadsheet.
 
 
 Types of best practices:
@@ -22,9 +22,6 @@ Each best practice consists of:
 
 -> How does the code structure look like for this application?: Do it like validators are usually implemented, with a class for each best practice, but that would lead to a million classes. Each best practice needs to have at least one method and data for fail and success. What would be a more lightweight structure for that?
 
-
-Best practises are collected in this google spreadsheet:
-[FreeCAD Best Practices](https://docs.google.com/spreadsheets/d/1ZreqK_yZHuSeZXfrCFB_nBAetcBOc8D6WC6QzSrWz-c)
 
 Potential sources for more best practices to be integrated in to spreadsheet (remove after integrated): 
 - [https://wiki.freecad.org/Best_Practices_with_SpreadSheets](https://wiki.freecad.org/Best_Practices_with_SpreadSheets)
