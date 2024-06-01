@@ -4,6 +4,12 @@ The FreeCAD Beginner Assistant analyses a FreeCAD FCStd File containing at least
 
 All best practices with all the required information to implement them get collected in the [FreeCAD Best Practices](https://docs.google.com/spreadsheets/d/1ZreqK_yZHuSeZXfrCFB_nBAetcBOc8D6WC6QzSrWz-c) google docs spreadsheet.
 
+Potential sources for more best practices to be integrated in to spreadsheet (remove after integrated): 
+- [https://wiki.freecad.org/Best_Practices_with_SpreadSheets](https://wiki.freecad.org/Best_Practices_with_SpreadSheets)
+- [https://forum.freecad.org/viewtopic.php?t=12738](https://forum.freecad.org/viewtopic.php?t=12738)
+- [https://forum.freecad.org/viewtopic.php?t=15432](https://forum.freecad.org/viewtopic.php?t=15432)
+- [https://www.youtube.com/playlist?list=PLP1rv37BojTd5NY3E_aqOWUe0uA8J-J1T](https://www.youtube.com/playlist?list=PLP1rv37BojTd5NY3E_aqOWUe0uA8J-J1T)
+
 
 Types of best practices:
 - Preferred ordner of operations
@@ -24,17 +30,3 @@ Return a score in % and a badge (% intervalls, take a look at competitive online
 
 
 -> How does the code structure look like for this application?: Do it like validators are usually implemented, with a class for each best practice, but that would lead to a million classes. Each best practice needs to have at least one method and data for fail and success. What would be a more lightweight structure for that?
-
-
-Potential sources for more best practices to be integrated in to spreadsheet (remove after integrated): 
-- [https://wiki.freecad.org/Best_Practices_with_SpreadSheets](https://wiki.freecad.org/Best_Practices_with_SpreadSheets)
-- [https://forum.freecad.org/viewtopic.php?t=12738](https://forum.freecad.org/viewtopic.php?t=12738)
-- [https://forum.freecad.org/viewtopic.php?t=15432](https://forum.freecad.org/viewtopic.php?t=15432)
-- [https://www.youtube.com/playlist?list=PLP1rv37BojTd5NY3E_aqOWUe0uA8J-J1T](https://www.youtube.com/playlist?list=PLP1rv37BojTd5NY3E_aqOWUe0uA8J-J1T)
-
-
-## Vision
-- Get asynchronous feedback with best practises in FCViewer.
-- Get realtime feedback with best practises in FreeCAD.
-
--> Increase the quality of community-created projects and increase the popularity of FreeCAD as a result.
