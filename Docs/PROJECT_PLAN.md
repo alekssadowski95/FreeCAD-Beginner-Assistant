@@ -17,7 +17,9 @@ Each best practice consists of:
   - a feedback text for success and fail.
     - For success, feedback text consists of a description of the best practice that has been applied and why it's important.
     - For fail, feedback text consists of a description of what could be improved and why its a problem.
-- Return score in % and a badge (% intervalls), based on % of best practices that have been applied, each best practice having a weight (0.0 - 1.0, default is 0.5) assigned to them.
+
+
+Return a score in % and a badge (% intervalls, take a look at competitive online gaming rank names and icons), based on % of best practices that have been applied, each best practice having a weight (0.0 - 1.0, default is 0.5) assigned to them.
 
 
 -> How does the code structure look like for this application?: Do it like validators are usually implemented, with a class for each best practice, but that would lead to a million classes. Each best practice needs to have at least one method and data for fail and success. What would be a more lightweight structure for that?
