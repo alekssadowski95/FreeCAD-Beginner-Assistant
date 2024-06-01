@@ -17,7 +17,7 @@ The FreeCAD Beginner Assistant analyses a FreeCAD FCStd File containing at least
 * Also we can discuss at: (TODO: create FreeCAD forum thread for this project)
 
 ## Vision
-- Integrate into FCViewer for asynchronous feedback.
-- Integrate into FreeCAD for realtime feedback.
+- Get asynchronous feedback with best practises in FCViewer.
+- Get realtime feedback with best practises in FreeCAD.
 
--> Increase the quality of community-created Part Design projects.
+-> Increase the quality of community-created projects and increase the popularity of FreeCAD as a result.
