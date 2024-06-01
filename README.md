@@ -1,6 +1,6 @@
 # FreeCAD Beginner Assistant (FreeCAD Addon)
 
-The FreeCAD Beginner Assistant analyses a FreeCAD FCStd File containing at least one Part Design Body and gives realtime or asynchronous recommendations/hints, based on best practices, on what was done well and what can be improved.
+The FreeCAD Beginner Assistant analyses a FreeCAD FCStd File containing at least one Part Design Body and gives realtime or asynchronous feedback, based on best practices, on what was done well and what can be improved.
 
 ## Description
 * Currently a Hello World Example
