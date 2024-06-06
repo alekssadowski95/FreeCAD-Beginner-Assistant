@@ -24,8 +24,8 @@ class UselessWorkbench(FreeCADGui.Workbench):
     """Purpose and functionality of the UselessWorkbench."""
 
     def __init__(self):
-        self.__class__.MenuText = "Useless Workbench"
-        self.__class__.ToolTip = "A description of the Useless workbench"
+        self.__class__.MenuText = "FreeCAD Beginner Assistant"
+        self.__class__.ToolTip = "A description of the FreeCAD Beginner Assistant"
         self.__class__.Icon = os.path.join(FreeCAD.getHomePath(), 'Mod', 'FreeCAD-Beginner-Assistant', 'icons', 'freecad-beginner-assistant-workbench.svg')
 
     def Initialize(self):
