@@ -22,3 +22,7 @@ print("Hello, World!")
 
 # Print Red Error Text to "Report View" Console 
 FreeCAD.Console.PrintError("Error: Hello, World!" + "\n")
+
+# Check if active FreeCAD file has an under-constrained sketch
+def contains_under_constrained_sketch(doc):
+    raise NotImplementedError
