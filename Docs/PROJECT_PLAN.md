@@ -32,7 +32,7 @@ Return an overall score in % and a badge (% intervalls, take a look at competiti
 -> How does the code structure look like for this application?: Do it like validators are usually implemented, with a class for each best practice, but that would lead to a million classes. Each best practice needs to have at least one method and data for fail and success. What would be a more lightweight structure for that?
 
 
-Registering a Gui document observer
+Registering a GuiDocumentObserver (also take a look at DocumentObserver)
 [https://gist.github.com/realthunder/728a6e1e5a000d250d7ecce46e0796af](https://gist.github.com/realthunder/728a6e1e5a000d250d7ecce46e0796af)
 
 
