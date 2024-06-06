@@ -17,8 +17,14 @@
 
 import FreeCAD # noqa
 
-# Print Normal Text to "Report View" Console 
+# Print normal text to "Report View" console 
 print("Hello, World!")
 
-# Print Red Error Text to "Report View" Console 
+# Print normal text to "Report View" console 
+FreeCAD.Console.PrintMessage("Message: Hello, World!" + "\n")
+
+# Print orange Warning text to "Report View" console 
+FreeCAD.Console.PrintWarning("Warning: Hello, World!" + "\n")
+
+# Print red error text to "Report View" console 
 FreeCAD.Console.PrintError("Error: Hello, World!" + "\n")
