@@ -16,75 +16,9 @@
 
 import os
 
-import FreeCAD
-import FreeCADGui
+import FreeCAD # noqa
+import FreeCADGui # noqa
 
-
-class UselessBoxCommand:
-    """Explanation of the UselessBoxCommand command."""
-
-    def __init__(self):
-        """Initialize variables for the command that must exist at all times."""
-        pass
-
-    def GetResources(self):
-        """Return a dictionary with data that will be used by the button or menu item."""
-        return {'Pixmap': os.path.join(os.path.dirname(__file__), 'icons', 'circle-blue.svg'),
-                'Accel': "Ctrl+A",
-                'MenuText': "UselessBox",
-                'ToolTip': "This is a Useless Box"}
-
-    def Activated(self):
-        """Run the following code when the command is activated (button press)."""
-        print('UselessBoxOnPointCommand activated')
-
-    def IsActive(self):
-        """Return True when the command should be active or False when it should be disabled (greyed)."""
-        return True
-
-class UselessBoxOnPointCommand:
-    """Explanation of the UselessBoxOnPointCommand command."""
-
-    def __init__(self):
-        """Initialize variables for the command that must exist at all times."""
-        pass
-
-    def GetResources(self):
-        """Return a dictionary with data that will be used by the button or menu item."""
-        return {'Pixmap': os.path.join(os.path.dirname(__file__), 'icons', 'circle-blue.svg'),
-                'Accel': "Ctrl+S",
-                'MenuText': "UselessBoxOnPoint",
-                'ToolTip': "This is a Useless Box at a Point"}
-
-    def Activated(self):
-        """Run the following code when the command is activated (button press)."""
-        print('UselessBoxOnPointCommand activated')
-
-    def IsActive(self):
-        """Return True when the command should be active or False when it should be disabled (greyed)."""
-        return True
-
-class UselessCylinderCommand:
-    """Explanation of the UselessCylinderCommand command."""
-
-    def __init__(self):
-        """Initialize variables for the command that must exist at all times."""
-        pass
-
-    def GetResources(self):
-        """Return a dictionary with data that will be used by the button or menu item."""
-        return {'Pixmap': os.path.join(os.path.dirname(__file__), 'icons', 'circle-blue.svg'),
-                'Accel': "Ctrl+D",
-                'MenuText': "UselessCylinder",
-                'ToolTip': "This is a Useless Cylinder"}
-
-    def Activated(self):
-        """Run the following code when the command is activated (button press)."""
-        print('UselessCylinderCommand activated')
-
-    def IsActive(self):
-        """Return True when the command should be active or False when it should be disabled (greyed)."""
-        return True
 
 class UselessWorkbench(FreeCADGui.Workbench):
     """Purpose and functionality of the UselessWorkbench."""
@@ -92,46 +26,48 @@ class UselessWorkbench(FreeCADGui.Workbench):
     def __init__(self):
         self.__class__.MenuText = "Useless Workbench"
         self.__class__.ToolTip = "A description of the Useless workbench"
-        self.__class__.Icon = os.path.join(os.path.dirname(__file__), 'icons', 'circle-blue.svg'),
+        self.__class__.Icon = os.path.join(FreeCAD.getHomePath(), 'Mod', 'FreeCAD-Beginner-Assistant', 'icons', 'freecad-beginner-assistant-workbench.svg')
 
     def Initialize(self):
         """This function is executed when the workbench is first activated.
         It is executed once in a FreeCAD session followed by the Activated function.
         """
 
+        # Import commands for this workbench
+        from commands import UselessBoxCommand, UselessBoxOnPointCommand
+
         # Adds commands to the Gui using the Command classes
         FreeCADGui.addCommand('Useless_Box_Command', UselessBoxCommand())
         FreeCADGui.addCommand('UselessBox_On_Point_Command', UselessBoxOnPointCommand())
-        FreeCADGui.addCommand('Useless_Cylinder_Command', UselessCylinderCommand())
         
         # A list of command names created above
         self.uselesscommands = [
             "Useless_Box_Command", 
-            "UselessBox_On_Point_Command", 
-            "Useless_Cylinder_Command"
+            "UselessBox_On_Point_Command"
             ] 
         
         # Adds the list of commands to a new toolbar
-        self.appendToolbar("Useless Commands", self.uselesscommands)
+        self.appendToolbar("Useless Toolbar Commands", self.uselesscommands)
 
          # Adds the list of commands to a new menu
-        self.appendMenu("Useless", self.uselesscommands)
+        self.appendMenu("Useless Menu Commands", self.uselesscommands)
 
         FreeCAD.Console.PrintMessage("Initializing Useless workbench")
 
     def Activated(self):
         """This function is executed whenever the workbench is activated"""
-        FreeCAD.Console.PrintMessage("Activating Useless workbench")
+        FreeCAD.Console.PrintMessage("Activating Useless workbench" + "\n")
 
     def Deactivated(self):
         """This function is executed whenever the workbench is deactivated"""
-        FreeCAD.Console.PrintMessage("Deactivating Useless workbench")
+        FreeCAD.Console.PrintMessage("Deactivating Useless workbench" + "\n")
 
     def ContextMenu(self, recipient):
         """This function is executed whenever the user right-clicks on screen"""
         # "recipient" will be either "view" or "tree"
-        self.appendContextMenu("Useless commands", self.list) # add commands to the context menu
-        FreeCAD.Console.PrintMessage("Activating Useless workbench context menu")
+        # add commands to the context menu
+        self.appendContextMenu("Useless commands", self.list) 
+        FreeCAD.Console.PrintMessage("Activating Useless workbench context menu" + "\n")
 
     def GetClassName(self): 
         # This function is mandatory if this is a full Python workbench

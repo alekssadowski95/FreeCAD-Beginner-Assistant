@@ -18,7 +18,7 @@
 import FreeCAD # noqa
 
 # Print normal text to "Report View" console 
-print("Hello, World!")
+print("Print: Hello, World!")
 
 # Print normal text to "Report View" console 
 FreeCAD.Console.PrintMessage("Message: Hello, World!" + "\n")
