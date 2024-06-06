@@ -3,6 +3,12 @@ The FreeCAD Beginner Assistant analyses a FreeCAD FCStd-file containing at least
 
 ![Hello World in FreeCAD Report view](Screenshots/HelloWorldExample.png)
 
+
+## Installation
+1. Download this repo
+2. Copy the folder "FreeCAD-Beginner-Assistant" to "<FreeCAD>/Mod"
+3. Run FreeCAD (The Addon is automatically recognized at startup)
+
 ## License
 [LGPLv2.1](https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant/blob/main/LICENSE) for all FreeCAD Beginner Assistant content
 
