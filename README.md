@@ -9,6 +9,26 @@ The FreeCAD Beginner Assistant analyses a FreeCAD FCStd-file containing at least
 2. Copy the folder "FreeCAD-Beginner-Assistant" to "FreeCAD/Mod"
 3. Run FreeCAD (The Addon is automatically recognized at startup)
 
+#### Example install path locations by operating system:
+
+* Linux:
+
+      `/home/user/.FreeCAD/Mod/FreeCAD-Beginner-Assistant`
+
+
+* macOS:
+
+      `/Users/user_name/Library/Preferences/FreeCAD/Mod/FreeCAD-Beginner-Assistant`
+
+      `/Users/user_name/Library/Application\ Support/FreeCAD/Mod/FreeCAD-Beginner-Assistant`
+
+
+* Windows:
+
+      `C:\Users\user_name\AppData\Roaming\FreeCAD\Mod\FreeCAD-Beginner-Assistant`
+
+
+
 ## License
 [LGPLv2.1](https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant/blob/main/LICENSE) for all FreeCAD Beginner Assistant content
 
