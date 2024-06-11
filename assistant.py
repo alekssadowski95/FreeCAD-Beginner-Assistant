@@ -23,7 +23,7 @@ Returns
 
 
 def get_under_constrained_sketches():
-    """Check if FreeCAD document contains an under-constrained sketch"""
+    """Returns all under-constrained sketches from the active FreeCAD document"""
     sketches = get_sketches(FreeCAD.ActiveDocument)
     under_constrained_sketches = []
     for sketch in sketches:
@@ -33,7 +33,7 @@ def get_under_constrained_sketches():
     
 
 def get_over_constrained_sketches():
-    """Check if FreeCAD document contains an over-constrained sketch"""
+    """Returns all over-constrained sketches from the active FreeCAD document"""
     sketches = get_sketches(FreeCAD.ActiveDocument)
     over_constrained_sketches = []
     for sketch in sketches:
@@ -41,7 +41,8 @@ def get_over_constrained_sketches():
             over_constrained_sketches.append(sketch)
     return over_constrained_sketches
 
-def get_sketches(doc):
+def get_sketches(doc: FreeCAD.Document):
+    """Returns all sketches from a FreeCAD document"""
     sketches = []
     for obj in doc.Objects:
         if obj.TypeId == "Sketcher::SketchObject":
