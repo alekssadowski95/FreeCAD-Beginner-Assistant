@@ -34,16 +34,16 @@ class UselessWorkbench(FreeCADGui.Workbench):
         """
 
         # Import commands for this workbench
-        from commands import UselessBoxCommand, UselessBoxOnPointCommand
+        from commands import UnderConstrainedSketchCommand, OverConstrainedSketchCommand
 
         # Adds commands to the Gui using the Command classes
-        FreeCADGui.addCommand('Useless_Box_Command', UselessBoxCommand())
-        FreeCADGui.addCommand('UselessBox_On_Point_Command', UselessBoxOnPointCommand())
+        FreeCADGui.addCommand('Under_Constrained_Sketch_Command', UnderConstrainedSketchCommand())
+        FreeCADGui.addCommand('Over_Constrained_Sketch_Command', OverConstrainedSketchCommand())
         
         # A list of command names created above
         self.uselesscommands = [
-            "Useless_Box_Command", 
-            "UselessBox_On_Point_Command"
+            "Under_Constrained_Sketch_Command", 
+            "Over_Constrained_Sketch_Command"
             ] 
         
         # Adds the list of commands to a new toolbar
