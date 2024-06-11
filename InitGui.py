@@ -52,22 +52,22 @@ class UselessWorkbench(FreeCADGui.Workbench):
          # Adds the list of commands to a new menu
         self.appendMenu("Useless Menu Commands", self.uselesscommands)
 
-        FreeCAD.Console.PrintMessage("Initializing Useless workbench")
+        FreeCAD.Console.PrintMessage("Initializing FreeCAD Beginner Assistant"+ "\n")
  
     def Activated(self):
         """This function is executed whenever the workbench is activated"""
-        FreeCAD.Console.PrintMessage("Activating Useless workbench" + "\n")
+        FreeCAD.Console.PrintMessage("Activating FreeCAD Beginner Assistant" + "\n")
 
     def Deactivated(self):
         """This function is executed whenever the workbench is deactivated"""
-        FreeCAD.Console.PrintMessage("Deactivating Useless workbench" + "\n")
+        FreeCAD.Console.PrintMessage("Deactivating FreeCAD Beginner Assistant" + "\n")
 
     def ContextMenu(self, recipient):
         """This function is executed whenever the user right-clicks on screen"""
         # "recipient" will be either "view" or "tree"
         # add commands to the context menu
         self.appendContextMenu("Useless commands", self.list) 
-        FreeCAD.Console.PrintMessage("Activating Useless workbench context menu" + "\n")
+        FreeCAD.Console.PrintMessage("Activating FreeCAD Beginner Assistant context menu" + "\n")
 
     def GetClassName(self): 
         # This function is mandatory if this is a full Python workbench
