@@ -21,8 +21,8 @@ Each best practice consists of:
   - a title
   - a method that checks if the best practice has been applied
   - a feedback text for success and fail.
-    - For success, feedback text consists of a description of the best practice that has been applied and why it's important.
-    - For fail, feedback text consists of a description of what could be improved and why its a problem.
+    - For success, feedback text consists of a description of the best practice that has been applied and why it's important. Add a happy owl icon.
+    - For fail, feedback text consists of a description of what could be improved and why its a problem. Add a sad owl icon.
   - weight (0.0 - 1.0, default is 0.5) that symbolises the importance of that best practice.
 
 
