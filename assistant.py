@@ -27,7 +27,7 @@ def get_under_constrained_sketches():
     sketches = get_sketches(FreeCAD.ActiveDocument)
     under_constrained_sketches = []
     for sketch in sketches:
-        if sketch.FullyConstrained == False and sketch.solve(False) == 0:
+        if sketch.FullyConstrained == False and sketch.solve() == 0:
             under_constrained_sketches.append(sketch)
     return under_constrained_sketches
     
@@ -37,7 +37,7 @@ def get_over_constrained_sketches():
     sketches = get_sketches(FreeCAD.ActiveDocument)
     over_constrained_sketches = []
     for sketch in sketches:
-        if sketch.FullyConstrained == True and sketch.solve(False) != 0:
+        if sketch.FullyConstrained == True and sketch.solve() != 0:
             over_constrained_sketches.append(sketch)
     return over_constrained_sketches
 
