@@ -44,7 +44,7 @@ def get_over_constrained_sketches():
 def get_sketches(doc):
     sketches = []
     for obj in doc.Objects:
-        if obj: # check if object is sketch
+        if obj.TypeId == "Sketcher::SketchObject":
              sketches.append(obj)
     return sketches
 
