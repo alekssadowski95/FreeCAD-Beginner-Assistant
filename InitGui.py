@@ -26,7 +26,7 @@ class UselessWorkbench(FreeCADGui.Workbench):
     def __init__(self):
         self.__class__.MenuText = "FreeCAD Beginner Assistant"
         self.__class__.ToolTip = "A description of the FreeCAD Beginner Assistant"
-        self.__class__.Icon = os.path.join(FreeCAD.getHomePath(), 'Mod', 'FreeCAD-Beginner-Assistant', 'icons', 'freecad-beginner-assistant-workbench.svg')
+        self.__class__.Icon = os.path.join(FreeCAD.getHomePath(), 'Mod', 'FreeCAD-Beginner-Assistant', 'icons', 'owl-2.png')
 
     def Initialize(self):
         """This function is executed when the workbench is first activated.
@@ -34,15 +34,15 @@ class UselessWorkbench(FreeCADGui.Workbench):
         """
 
         # Import commands for this workbench
-        from commands import UnderConstrainedSketchCommand, OverConstrainedSketchCommand
+        from commands import AnalyseDocumentCommand, OverConstrainedSketchCommand
 
         # Adds commands to the Gui using the Command classes
-        FreeCADGui.addCommand('Under_Constrained_Sketch_Command', UnderConstrainedSketchCommand())
+        FreeCADGui.addCommand('Analyse_Document_Command', AnalyseDocumentCommand())
         FreeCADGui.addCommand('Over_Constrained_Sketch_Command', OverConstrainedSketchCommand())
         
         # A list of command names created above
         self.uselesscommands = [
-            "Under_Constrained_Sketch_Command", 
+            "Analyse_Document_Command", 
             "Over_Constrained_Sketch_Command"
             ] 
         
@@ -53,7 +53,7 @@ class UselessWorkbench(FreeCADGui.Workbench):
         self.appendMenu("Useless Menu Commands", self.uselesscommands)
 
         FreeCAD.Console.PrintMessage("Initializing Useless workbench")
-
+ 
     def Activated(self):
         """This function is executed whenever the workbench is activated"""
         FreeCAD.Console.PrintMessage("Activating Useless workbench" + "\n")
