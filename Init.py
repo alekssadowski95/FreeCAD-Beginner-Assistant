@@ -15,7 +15,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
 
 
-# This will be executed, when FreeCAD is run withou the GUI
+# This will be executed, when FreeCAD is run without the GUI
 
 import FreeCAD # noqa
 
