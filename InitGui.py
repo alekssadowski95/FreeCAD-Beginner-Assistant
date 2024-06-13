@@ -21,6 +21,17 @@ import FreeCADGui # noqa
 
 from config import path_to_mod
 
+# Print normal text to "Report View" console 
+print("Print: Hello, World!")
+
+# Print normal text to "Report View" console 
+FreeCAD.Console.PrintMessage("Message: Hello, World!" + "\n")
+
+# Print orange Warning text to "Report View" console 
+FreeCAD.Console.PrintWarning("Warning: Hello, World!" + "\n")
+
+# Print red error text to "Report View" console 
+FreeCAD.Console.PrintError("Error: Hello, World!" + "\n")
 
 class UselessWorkbench(FreeCADGui.Workbench):
     """Purpose and functionality of the UselessWorkbench."""
