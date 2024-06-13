@@ -38,7 +38,7 @@ The FreeCAD Beginner Assistant gives interactive feedback on best practices for 
 
 ## Contact
 * For questions, comments, feature requests, and improvements, please open an issue at: [issue tracker](https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant/issues)
-* Also we can discuss at: (TODO: create FreeCAD forum thread for this project)
+* Also we can discuss at: (TODO: create FreeCAD forum thread for this project, when MVP is ready)
 
 ## Vision
 - Get asynchronous feedback with best practices in FCViewer.
