@@ -17,7 +17,7 @@ class AnalyseDocumentCommand:
 
     def GetResources(self):
         """Return a dictionary with data that will be used by the button or menu item."""
-        return {'Pixmap': os.path.join(path_to_mod, 'FreeCAD-Beginner-Assistant', 'icons', 'business.png'),
+        return {'Pixmap': os.path.join(path_to_mod, 'icons', 'business.png'),
                 'Accel': "Ctrl+A",
                 'MenuText': "AnalyseDocumentCommand",
                 'ToolTip': "AnalyseDocumentCommand ToolTip"}
@@ -57,7 +57,7 @@ class OverConstrainedSketchCommand:
 
     def GetResources(self):
         """Return a dictionary with data that will be used by the button or menu item."""
-        return {'Pixmap': os.path.join(path_to_mod, 'FreeCAD-Beginner-Assistant', 'icons', 'circle-blue.svg'),
+        return {'Pixmap': os.path.join(path_to_mod, 'icons', 'circle-blue.svg'),
                 'Accel': "Ctrl+S",
                 'MenuText': "OverConstrainedSketchCommand",
                 'ToolTip': "OverConstrainedSketchCommand ToolTip"}
