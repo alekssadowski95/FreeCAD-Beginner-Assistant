@@ -24,7 +24,7 @@ Each best practice consists of:
     - For success, feedback text consists of a description of the best practice that has been applied and why it's important. Add a happy owl icon.
     - For fail, feedback text consists of a description of what could be improved and why its a problem. Add a sad owl icon.
   - weight (0.0 - 1.0, default is 0.5) that symbolises the importance of that best practice.
-  - link to freecad wiki of most relevant page
+  - link to freecad wiki of most relevant page with preview in the addon
 
 
 Return an overall score in % and a badge (% intervalls, take a look at competitive online gaming rank names and icons), based on weighted result of best practices that have been applied.
