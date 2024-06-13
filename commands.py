@@ -5,7 +5,7 @@ import FreeCAD # noqa
 import FreeCADGui # noqa
 
 from assistant import get_under_constrained_sketches, get_over_constrained_sketches
-from config import path_to_mod
+from config import addon_work_dir
 
 
 class AnalyseDocumentCommand:
@@ -17,7 +17,7 @@ class AnalyseDocumentCommand:
 
     def GetResources(self):
         """Return a dictionary with data that will be used by the button or menu item."""
-        return {'Pixmap': os.path.join(path_to_mod, 'icons', 'business.png'),
+        return {'Pixmap': os.path.join(addon_work_dir, 'icons', 'business.png'),
                 'Accel': "Ctrl+A",
                 'MenuText': "AnalyseDocumentCommand",
                 'ToolTip': "AnalyseDocumentCommand ToolTip"}
@@ -57,7 +57,7 @@ class OverConstrainedSketchCommand:
 
     def GetResources(self):
         """Return a dictionary with data that will be used by the button or menu item."""
-        return {'Pixmap': os.path.join(path_to_mod, 'icons', 'circle-blue.svg'),
+        return {'Pixmap': os.path.join(addon_work_dir, 'icons', 'circle-blue.svg'),
                 'Accel': "Ctrl+S",
                 'MenuText': "OverConstrainedSketchCommand",
                 'ToolTip': "OverConstrainedSketchCommand ToolTip"}
