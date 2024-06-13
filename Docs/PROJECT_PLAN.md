@@ -27,6 +27,9 @@ Each best practice consists of:
   - link to freecad wiki of most relevant page with preview in the addon
 
 
+Gamification: Combine assistant with Tamagochi. Pet losses health when bad practices are applied and gains health when good practices are applied.
+
+
 Return an overall score in % and a badge (% intervalls, take a look at competitive online gaming rank names and icons), based on weighted result of best practices that have been applied.
 
 
