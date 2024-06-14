@@ -94,7 +94,6 @@ class AnalyseDocumentCommand:
         FreeCAD.Console.PrintMessage("You have used a non-standard file format to save your part: ")
         FreeCAD.Console.PrintMessage("Not implemented yet" + "\n")
 
-
         FreeCAD.Console.PrintMessage("--------------------------" + "\n")
 
 
