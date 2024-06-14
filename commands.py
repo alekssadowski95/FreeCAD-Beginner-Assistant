@@ -4,7 +4,7 @@ import os
 import FreeCAD # noqa
 import FreeCADGui # noqa
 
-from assistant import get_under_constrained_sketches, get_over_constrained_sketches, has_document_open_sketches
+from assistant import get_under_constrained_sketches, get_over_constrained_sketches, has_open_sketches
 from config import addon_work_dir
 
 
@@ -80,7 +80,7 @@ class AnalyseDocumentCommand:
         FreeCAD.Console.PrintMessage("Not implemented yet" + "\n")
 
         FreeCAD.Console.PrintMessage("You have created a sketch that does not contain a closed wire: ")
-        FreeCAD.Console.PrintMessage(str(has_document_open_sketches(FreeCAD.ActiveDocument)) + "\n")
+        FreeCAD.Console.PrintMessage(str(has_open_sketches(FreeCAD.ActiveDocument)) + "\n")
 
         FreeCAD.Console.PrintMessage("You have created an additive Part Design feature after a subtractive one: ")
         FreeCAD.Console.PrintMessage("Not implemented yet" + "\n")

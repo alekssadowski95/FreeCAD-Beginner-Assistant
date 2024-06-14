@@ -50,7 +50,7 @@ def has_sketch_open_wire(sketch: Sketcher.Sketch):
             return True
     return False
         
-def has_document_open_sketches(doc: FreeCAD.Document):
+def has_open_sketches(doc: FreeCAD.Document):
     """Returns true if document contains at least one sketch with an open wire"""
     sketches = get_sketches(doc)
     for sketch in sketches:
