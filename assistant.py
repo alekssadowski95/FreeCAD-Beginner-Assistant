@@ -146,6 +146,13 @@ def has_additive_after_subtractive(body):
                     return True
     return False
 
+def has_additive_after_subtractive_all(doc: FreeCAD.Document):
+    bodies = get_objects_by_type_id(doc, 'PartDesign::Body')
+    for body in bodies:
+        if has_additive_after_subtractive(body):
+            return True
+    return False
+
 def get_objects_by_type_id(doc: FreeCAD.Document, type_id: str):
     """Returns all objects of a given type from a FreeCAD document
 
