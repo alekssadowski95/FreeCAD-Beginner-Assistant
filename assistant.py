@@ -1,4 +1,5 @@
 import FreeCAD # noqa
+import Sketcher # noqa
 
 
 # From own testing:
@@ -22,9 +23,9 @@ Returns
 """
 
 
-def get_under_constrained_sketches():
+def get_under_constrained_sketches(doc: FreeCAD.Document):
     """Returns all under-constrained sketches from the active FreeCAD document"""
-    sketches = get_sketches(FreeCAD.ActiveDocument)
+    sketches = get_sketches(doc)
     under_constrained_sketches = []
     for sketch in sketches:
         if sketch.FullyConstrained == False and sketch.solve() == 0:
@@ -32,20 +33,37 @@ def get_under_constrained_sketches():
     return under_constrained_sketches
     
 
-def get_over_constrained_sketches():
+def get_over_constrained_sketches(doc: FreeCAD.Document):
     """Returns all over-constrained sketches from the active FreeCAD document"""
-    sketches = get_sketches(FreeCAD.ActiveDocument)
+    sketches = get_sketches(doc)
     over_constrained_sketches = []
     for sketch in sketches:
         if sketch.FullyConstrained == True and sketch.solve() != 0:
             over_constrained_sketches.append(sketch)
     return over_constrained_sketches
 
+def has_sketch_open_wire(sketch: Sketcher.Sketch):
+    """Returns true if sketch contains an open wire"""
+    wires = sketch.Shape.Wires
+    for wire in wires:
+        if wire.isClosed() == False:
+            return True
+    return False
+        
+def has_document_open_sketches(doc: FreeCAD.Document):
+    """Returns true if document contains at least one sketch with an open wire"""
+    sketches = get_sketches(doc)
+    for sketch in sketches:
+        if has_sketch_open_wire(sketch):
+            return True
+    return False
+
 def get_sketches(doc: FreeCAD.Document):
     """Returns all sketches from a FreeCAD document"""
+    type_id = "Sketcher::SketchObject"
     sketches = []
     for obj in doc.Objects:
-        if obj.TypeId == "Sketcher::SketchObject":
+        if obj.TypeId == type_id:
              sketches.append(obj)
     return sketches
 
