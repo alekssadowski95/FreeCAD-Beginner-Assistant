@@ -58,7 +58,7 @@ def has_open_sketches(doc: FreeCAD.Document):
             return True
     return False
 
-def body_has_many_features(body, limit: int):
+def body_has_many_features(body, limit: int = 8):
     if len(body.Group) > limit:
         return True
     return False
