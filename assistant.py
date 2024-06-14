@@ -100,6 +100,18 @@ def doc_was_not_saved_recently(doc: FreeCAD.Document):
         return True
     return False
 
+# TODO: Requires 'psutil' library, which is not included with the Pyhton interpreter integrated in FreeCAD
+def high_cpu_usage():
+    return NotImplementedError
+
+# TODO: Requires 'psutil' library, which is not included with the Pyhton interpreter integrated in FreeCAD
+def high_ram_usage():
+    return NotImplementedError
+
+# TODO: Requires 'psutil' library, which is not included with the Pyhton interpreter integrated in FreeCAD
+def high_disk_usage():
+    return NotImplementedError
+
 def get_objects_by_type_id(doc: FreeCAD.Document, type_id: str):
     """Returns all objects of a given type from a FreeCAD document
 
