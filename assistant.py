@@ -157,6 +157,30 @@ def has_additive_after_subtractive_all(doc: FreeCAD.Document):
 def has_valid_filename():
     return NotImplementedError
 
+def check_if_edges_intersect(edge1, edge2):
+    """
+    Check if two edges in FreeCAD intersect.
+
+    Args:
+    edge1: First edge (Part.Edge)
+    edge2: Second edge (Part.Edge)
+
+    Returns:
+    bool: True if edges intersect, otherwise False.
+    """
+    # Get the shape of the edges
+    shape1 = edge1.Shape
+    shape2 = edge2.Shape
+    
+    # Perform intersection check
+    common = shape1.common(shape2)
+    
+    # Check if the common shape has vertices, which means they intersect
+    if common.Vertexes:
+        return True
+    else:
+        return False
+
 def get_objects_by_type_id(doc: FreeCAD.Document, type_id: str):
     """Returns all objects of a given type from a FreeCAD document
 
