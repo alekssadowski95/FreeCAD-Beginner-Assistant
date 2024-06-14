@@ -112,6 +112,43 @@ def high_ram_usage():
 def high_disk_usage():
     return NotImplementedError
 
+def has_additive_after_subtractive(body):
+    additive_features_type_id = [
+        'PartDesign::Pad',
+        'PartDesign::Revolution',
+        'PartDesign::AdditivePipe',
+        'PartDesign::AdditiveLoft',
+        'PartDesign::AdditiveBox',
+        'PartDesign::AdditiveCylinder',
+        'PartDesign::AdditiveSphere',
+        'PartDesign::AdditiveCone',
+        'PartDesign::AdditiveTorus',
+        'PartDesign::AdditivePrism',
+        'PartDesign::AdditiveHelix'
+        ]
+    subtractive_features_type_id = [
+        'PartDesign::Pocket',
+        'PartDesign::Groove',
+        'PartDesign::SubtractivePipe',
+        'PartDesign::SubtractiveLoft',
+        'PartDesign::SubtractiveBox',
+        'PartDesign::SubtractiveCylinder',
+        'PartDesign::SubtractiveSphere',
+        'PartDesign::SubtractiveCone',
+        'PartDesign::SubtractiveTorus',
+        'PartDesign::SubtractivePrism',
+        'PartDesign::SubtractiveHelix'
+        ]
+    for add_feature in body.Group:
+        if add_feature.TypeId in additive_features_type_id:
+            for sub_feature in body.Group:
+                if sub_feature.TypeId in subtractive_features_type_id and  body.Group.index(add_feature) > body.Group.index(sub_feature):
+                    return True
+    return False
+
+def subtractive_before(additive_feature):
+
+
 def get_objects_by_type_id(doc: FreeCAD.Document, type_id: str):
     """Returns all objects of a given type from a FreeCAD document
 
