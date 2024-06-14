@@ -58,6 +58,48 @@ def has_open_sketches(doc: FreeCAD.Document):
             return True
     return False
 
+def body_has_many_features(body, limit: int):
+    if len(body.Group) > limit:
+        return True
+    return False
+    
+def has_complex_bodies(doc: FreeCAD.Document):
+    bodies = get_objects_by_type_id(doc, 'PartDesign::Body')
+    for body in bodies:
+        if body_has_many_features(body):
+            return True
+    return False
+
+def get_objects_by_type_id(doc: FreeCAD.Document, type_id: str):
+    """Returns all objects of a given type from a FreeCAD document
+
+    # TypeId
+    # origin:               'App::Origin'
+    # origin-line:          'App::Line'
+    # origin-plane:         'App::Plane'
+    # sketch:               'Sketcher::SketchObject'
+    # pd-body:              'PartDesign::Body'      
+    # pd-coordinate system: 'PartDesign::CoordinateSystem'
+    # pd-datum plane:       'PartDesign::Plane'
+    # pd-datum line:        'PartDesign::Line'
+    # pd-datum point:       'PartDesign::Point'
+    # pd-pad:               'PartDesign::Pad'
+    # pd-pocket:            'PartDesign::Pocket'
+    # pd-fillet:            'PartDesign::Fillet'
+    # pd-chamfer:           'PartDesign::Chamfer'
+
+    """
+    objects = []
+    for obj in doc.Objects:
+        if obj.TypeId == type_id:
+             objects.append(obj)
+
+    if not objects:
+        print("No object if given type found in the document")
+        return
+    return objects
+    
+
 def get_sketches(doc: FreeCAD.Document):
     """Returns all sketches from a FreeCAD document"""
     type_id = "Sketcher::SketchObject"
