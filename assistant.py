@@ -146,9 +146,6 @@ def has_additive_after_subtractive(body):
                     return True
     return False
 
-def subtractive_before(additive_feature):
-
-
 def get_objects_by_type_id(doc: FreeCAD.Document, type_id: str):
     """Returns all objects of a given type from a FreeCAD document
 
