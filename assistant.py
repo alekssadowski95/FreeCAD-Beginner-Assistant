@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import FreeCAD # noqa
 import Sketcher # noqa
 
@@ -81,6 +83,20 @@ def has_old_freecad_version():
     if version_info[1] < minor:
         return True  
     if version_info[2] < patch:
+        return True
+    return False
+
+# TODO: Might not work as intended.
+def doc_was_not_saved_recently(doc: FreeCAD.Document):
+    """Checks how long ago the document was modified."""
+    if doc.isSaved():
+        return False
+    date_string = doc.LastModifiedDate
+    date_format = '%Y-%m-%dT%H:%M:%SZ'
+    date_object = datetime.strptime(date_string, date_format)
+    current_time = datetime.now()
+    delta = current_time - date_object
+    if delta.total_seconds() > 300:
         return True
     return False
 
