@@ -4,7 +4,7 @@ import os
 import FreeCAD # noqa
 import FreeCADGui # noqa
 
-from assistant import get_under_constrained_sketches, get_over_constrained_sketches, has_open_sketches, has_complex_bodies
+from assistant import get_under_constrained_sketches, get_over_constrained_sketches, has_open_sketches, has_complex_bodies, has_old_freecad_version
 from config import addon_work_dir
 
 
@@ -74,7 +74,7 @@ class AnalyseDocumentCommand:
         FreeCAD.Console.PrintMessage("Not implemented yet" + "\n")
 
         FreeCAD.Console.PrintMessage("Your FreeCAD program version is not up to date: ")
-        FreeCAD.Console.PrintMessage("Not implemented yet" + "\n")
+        FreeCAD.Console.PrintMessage(str(has_old_freecad_version()) + "\n")
 
         FreeCAD.Console.PrintMessage("You have not saved your document in a while: ")
         FreeCAD.Console.PrintMessage("Not implemented yet" + "\n")

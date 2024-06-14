@@ -70,6 +70,20 @@ def has_complex_bodies(doc: FreeCAD.Document):
             return True
     return False
 
+def has_old_freecad_version():
+    """Check if FreeCAD version is up to date."""
+    major = 0
+    minor = 21
+    patch = 2
+    version_info = FreeCAD.Version()
+    if version_info[0] < major:
+        return True
+    if version_info[1] < minor:
+        return True  
+    if version_info[2] < patch:
+        return True
+    return False
+
 def get_objects_by_type_id(doc: FreeCAD.Document, type_id: str):
     """Returns all objects of a given type from a FreeCAD document
 
