@@ -4,7 +4,7 @@ import os
 import FreeCAD # noqa
 import FreeCADGui # noqa
 
-from assistant import get_under_constrained_sketches, get_over_constrained_sketches, has_open_sketches, has_complex_bodies, has_old_freecad_version
+from assistant import get_under_constrained_sketches, get_over_constrained_sketches, has_open_sketches, has_complex_bodies, has_old_freecad_version, get_unnamed_sketches
 from config import addon_work_dir
 
 
@@ -50,7 +50,7 @@ class AnalyseDocumentCommand:
         FreeCAD.Console.PrintMessage("Not implemented yet" + "\n")
 
         FreeCAD.Console.PrintMessage("You have not given your sketch a useful name: ")
-        FreeCAD.Console.PrintMessage("Not implemented yet" + "\n")
+        FreeCAD.Console.PrintMessage(str(len(get_unnamed_sketches(FreeCAD.ActiveDocument)) > 0) + "\n")
 
         FreeCAD.Console.PrintMessage("Your file size is getting large: ")
         FreeCAD.Console.PrintMessage("Not implemented yet" + "\n")
