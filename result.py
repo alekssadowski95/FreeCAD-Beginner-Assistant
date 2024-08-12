@@ -4,7 +4,7 @@ result = {
     "pts-reached" : "14",
     "pts-available" : "21",
     "rank" : "bronze",
-    "best-practises" : (
+    "best-practices" : (
         {
         "id" : 1,
         "action" : "You have referenced a face of your 3D model (topological element) for your sketch.",
