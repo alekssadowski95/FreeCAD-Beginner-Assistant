@@ -1,6 +1,6 @@
 result = {
-    "Date" : "01.01.2024",
-    "File" : "test_file.FCStd",
+    "date" : "01.01.2024",
+    "file" : "test_file.FCStd",
     "pts-reached" : "14",
     "pts-available" : "21",
     "rank" : "bronze",
