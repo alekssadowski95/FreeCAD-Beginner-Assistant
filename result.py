@@ -162,7 +162,7 @@ def freecad_assistant_pdf_report_footer(freecad_report_pdf):
 def freecad_assistant_pdf_report(freecad_report_dict):
     run_date = freecad_report_dict["date"]
     filename = freecad_report_dict["file"]
-    model_image_loc = freecad_report_dict["screenshot"]
+    model_image_name = freecad_report_dict["screenshot"]
     points_got = freecad_report_dict["pts-reached"]
     points_max= freecad_report_dict["pts-available"]
     rank = freecad_report_dict["rank"]
@@ -179,7 +179,7 @@ def freecad_assistant_pdf_report(freecad_report_dict):
 
     pdf = freecad_assistant_pdf_report_header(pdf) # Header
     pdf.ln(10) # Add Space in millimeters
-    pdf.image("./tests/test-images/" + model_image_loc, x=ONE_INCH, y=pdf.y, w=(pdf.w - (2 * ONE_INCH)))
+    pdf.image("./model_images/" + model_image_name, x=ONE_INCH, y=pdf.y, w=(pdf.w - (2 * ONE_INCH)))
     pdf.ln(90) # Add Space in millimeters
     pdf = freecad_assistant_pdf_report_summary_text(pdf, filename, run_date, rank, points_got, points_max)
     pdf.ln(10) # Add Space in millimeters
