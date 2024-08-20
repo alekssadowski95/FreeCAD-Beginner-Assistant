@@ -133,7 +133,7 @@ def freecad_assistant_pdf_report_table(freecad_report_pdf, freecad_report_table_
     return freecad_report_pdf
 
 def freecad_assistant_pdf_report_footer(freecad_report_pdf):
-    freecad_report_pdf.image("./tests/test-images/owl-2.png", x=ONE_INCH, y=freecad_report_pdf.y, w=20)
+    freecad_report_pdf.image("./icons/owl-2.png", x=ONE_INCH, y=freecad_report_pdf.y, w=20)
 
     freecad_report_pdf.ln(50) # Add Space in millimeters
 
