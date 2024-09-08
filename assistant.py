@@ -2,6 +2,7 @@ from datetime import datetime
 
 import FreeCAD # noqa
 import Sketcher # noqa
+import re # Python Regular expression operations
 
 
 # From own testing:
@@ -220,3 +221,12 @@ def get_sketches(doc: FreeCAD.Document):
              sketches.append(obj)
     return sketches
 
+def get_unnamed_sketches(doc: FreeCAD.Document):
+    """Returns all sketches with default naming FreeCAD document"""
+    pattern = r'^Sketch\d{0,3}$'
+    sketches = get_sketches(doc)
+    unnamed_sketches = []
+    for sketch in sketches:
+        if re.match(pattern, sketch.Label):
+            unnamed_sketches.append(sketch)
+    return unnamed_sketches
