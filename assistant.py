@@ -181,6 +181,7 @@ def check_if_edges_intersect(edge1, edge2):
     else:
         return False
 
+
 def get_objects_by_type_id(doc: FreeCAD.Document, type_id: str):
     """Returns all objects of a given type from a FreeCAD document
 

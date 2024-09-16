@@ -96,11 +96,68 @@ class AnalyseDocumentCommand:
 
         FreeCAD.Console.PrintMessage("--------------------------" + "\n")
 
+        from datetime import date
+
+        # Get today's date
+        today = date.today()
+
+        # Get filename of active freecad document
+        filename = FreeCAD.ActiveDocument.Name + ".FCStd"
+
+        # Set 3D view to Isometric
+        FreeCADGui.activeDocument().activeView().viewIsometric()
+
+        # Fit the 3D view to content
+        FreeCADGui.SendMsgToActiveView("ViewFit")
+
+        # Save the screenshot to a file
+        screenshot_abs_path = FreeCADGui.activeDocument().activeView().saveImage('C:/Users/Aleksander/Desktop/test.png',1543,558,'Transparent')
+
+        # Get the rank for this analysis
+        rank = get_rank(pts_reached, pts_available)
+
+        result = {
+            "date" : today,
+            "file" : filename,
+            "screenshot" : screenshot_abs_path,
+            "pts-reached" : "14",
+            "pts-available" : "21",
+            "rank" : rank,
+            "best-practices" : ()
+        }
+
+        best_practices = result["best-practices"]
+        best_practices.append(
+            {
+            "id" : 1,
+            "action" : "You have referenced a face of your 3D model (topological element) for your sketch.",
+            "effect" : "This might lead to the sketch losing its reference, when the topological elements change.",
+            "solution" : "Reference one of the Origin planes or create a new plane, that also only references one of the Origin planes instead.",
+            "status" : "Passed"
+            }
+        )
+
 
 
     def IsActive(self):
         """Return True when the command should be active or False when it should be disabled (greyed)."""
         return True
+    
+def get_rank(pts_reached, pts_available):
+    ratio = pts_reached/pts_available
+    if ratio <= 0.5:
+        return "Future expert"
+    if ratio > 0.5 and ratio <= 0.7:
+        return "Bronze"
+    if ratio > 0.7 and ratio <= 0.8:
+        return "Silver"
+    if ratio > 0.8 and ratio <= 0.9:
+        return "Gold"
+    if ratio > 0.9 and ratio <= 0.95:
+        return "Diamond"
+    if ratio > 0.95:
+        return "Master"
+
 
 class OverConstrainedSketchCommand:
     """Explanation of the OverConstrainedSketchCommand command."""
