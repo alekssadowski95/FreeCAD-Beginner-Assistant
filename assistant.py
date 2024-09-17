@@ -4,11 +4,13 @@ import FreeCAD # noqa
 import Sketcher # noqa
 
 
-# From own testing:
-# When sketches in FreeCAD are underconstrained, sketch.FullyConstrained returns False
-# When sketches in FreeCAD are underconstrained, sketch.solve() returns 0
-# When sketches in FreeCAD are overconstrained, sketch.FullyConstrained returns True
-# When sketches in FreeCAD are overconstrained, sketch.solve() returns -2
+""" From own testing:
+
+When sketches in FreeCAD are underconstrained, sketch.FullyConstrained returns False
+When sketches in FreeCAD are underconstrained, sketch.solve() returns 0
+When sketches in FreeCAD are overconstrained, sketch.FullyConstrained returns True
+When sketches in FreeCAD are overconstrained, sketch.solve() returns -2
+"""
 
 """ From FreeCAD Documentation:
 
