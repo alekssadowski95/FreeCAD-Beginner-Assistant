@@ -19,8 +19,8 @@ import os
 import FreeCAD # noqa
 import FreeCADGui # noqa
 
-class UselessWorkbench(FreeCADGui.Workbench):
-    """Purpose and functionality of the UselessWorkbench."""
+class AssistantWorkbench(FreeCADGui.Workbench):
+    """Purpose and functionality of the AssistantWorkbench."""
 
     def __init__(self):
         self.__class__.MenuText = "FreeCAD Beginner Assistant"
@@ -41,16 +41,16 @@ class UselessWorkbench(FreeCADGui.Workbench):
         FreeCADGui.addCommand('Over_Constrained_Sketch_Command', OverConstrainedSketchCommand())
         
         # A list of command names created above
-        self.uselesscommands = [
+        self.assistantcommands = [
             "Analyse_Document_Command", 
             "Over_Constrained_Sketch_Command"
             ] 
         
         # Adds the list of commands to a new toolbar
-        self.appendToolbar("Useless Toolbar Commands", self.uselesscommands)
+        self.appendToolbar("Assistant Toolbar Commands", self.assistantcommands)
 
          # Adds the list of commands to a new menu
-        self.appendMenu("Useless Menu Commands", self.uselesscommands)
+        self.appendMenu("Assistant Menu Commands", self.assistantcommands)
 
         FreeCAD.Console.PrintMessage("Initializing FreeCAD Beginner Assistant"+ "\n")
  
@@ -66,7 +66,7 @@ class UselessWorkbench(FreeCADGui.Workbench):
         """This function is executed whenever the user right-clicks on screen"""
         # "recipient" will be either "view" or "tree"
         # add commands to the context menu
-        self.appendContextMenu("Useless commands", self.list) 
+        self.appendContextMenu("assistant commands", self.list) 
         FreeCAD.Console.PrintMessage("Activating FreeCAD Beginner Assistant context menu" + "\n")
 
     def GetClassName(self): 
@@ -74,4 +74,4 @@ class UselessWorkbench(FreeCADGui.Workbench):
         # This is not a template, the returned string should be exactly "Gui::PythonWorkbench"
         return "Gui::PythonWorkbench"   
 
-FreeCADGui.addWorkbench(UselessWorkbench())
+FreeCADGui.addWorkbench(AssistantWorkbench())
