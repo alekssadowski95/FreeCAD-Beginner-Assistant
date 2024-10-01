@@ -34,17 +34,15 @@ class AssistantWorkbench(FreeCADGui.Workbench):
         """
 
         # Import commands for this workbench
-        from commands import AnalyseDocumentCommand, OverConstrainedSketchCommand
+        from commands import AnalyseDocumentCommand
 
         # Adds commands to the Gui using the Command classes
         FreeCADGui.addCommand('Analyse_Document_Command', AnalyseDocumentCommand())
-        FreeCADGui.addCommand('Over_Constrained_Sketch_Command', OverConstrainedSketchCommand())
         
         # A list of command names created above
         self.assistantcommands = [
-            "Analyse_Document_Command", 
-            "Over_Constrained_Sketch_Command"
-            ] 
+            "Analyse_Document_Command"
+        ] 
         
         # Adds the list of commands to a new toolbar
         self.appendToolbar("Assistant Toolbar Commands", self.assistantcommands)
