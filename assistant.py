@@ -28,10 +28,40 @@ Returns
 """
 
 # ID 1: You have referenced a face of your 3D model (topological element) for your sketch.
+def has_referenced_face_for_sketch():
+    return NotImplementedError
 
 # ID 2: You have created a sketch, that is under constrained.
+def get_under_constrained_sketches(doc: FreeCAD.Document):
+    """Returns all under-constrained sketches from the active FreeCAD document"""
+    sketches = get_sketches(doc)
+    under_constrained_sketches = []
+    for sketch in sketches:
+        if sketch.FullyConstrained == False and sketch.solve() == 0:
+            under_constrained_sketches.append(sketch)
+    return under_constrained_sketches
+    
+def has_under_constrained_sketch(doc: FreeCAD.Document):
+    if len(get_under_constrained_sketches(doc)) > 0:
+        return True
+    else:
+        return False
 
 # ID 3: You have created a sketch, that is over constrained.
+def get_over_constrained_sketches(doc: FreeCAD.Document):
+    """Returns all over-constrained sketches from the active FreeCAD document"""
+    sketches = get_sketches(doc)
+    over_constrained_sketches = []
+    for sketch in sketches:
+        if sketch.FullyConstrained == True and sketch.solve() != 0:
+            over_constrained_sketches.append(sketch)
+    return over_constrained_sketches
+
+def has_over_constrained_sketch(doc: FreeCAD.Document):
+    if len(get_over_constrained_sketches(doc)) > 0:
+        return True
+    else:
+        return False
 
 # ID 4: Your 3D model is not symmetric in relation to one of the Origin planes.
 
@@ -89,8 +119,36 @@ def has_old_freecad_version():
     return False
 
 # ID 15: You have not saved your document in a while.
+# TODO: Might not work as intended.
+def doc_was_not_saved_recently(doc: FreeCAD.Document):
+    """Checks how long ago the document was modified."""
+    if doc.isSaved():
+        return False
+    date_string = doc.LastModifiedDate
+    date_format = '%Y-%m-%dT%H:%M:%SZ'
+    date_object = datetime.strptime(date_string, date_format)
+    current_time = datetime.now()
+    delta = current_time - date_object
+    if delta.total_seconds() > 300:
+        return True
+    return False
 
 # ID 16: You have created a sketch that does not contain a closed wire.
+def has_sketch_open_wire(sketch: Sketcher.Sketch):
+    """Returns true if sketch contains an open wire"""
+    wires = sketch.Shape.Wires
+    for wire in wires:
+        if wire.isClosed() == False:
+            return True
+    return False
+        
+def has_open_sketches(doc: FreeCAD.Document):
+    """Returns true if document contains at least one sketch with an open wire"""
+    sketches = get_sketches(doc)
+    for sketch in sketches:
+        if has_sketch_open_wire(sketch):
+            return True
+    return False
 
 # ID 17: You have created an additive Part Design feature after a subtractive one.
 def has_additive_after_subtractive(body):
@@ -170,57 +228,9 @@ def check_if_edges_intersect(edge1, edge2):
 def is_export_standard_format():
     return NotImplementedError
 
-
-def get_under_constrained_sketches(doc: FreeCAD.Document):
-    """Returns all under-constrained sketches from the active FreeCAD document"""
-    sketches = get_sketches(doc)
-    under_constrained_sketches = []
-    for sketch in sketches:
-        if sketch.FullyConstrained == False and sketch.solve() == 0:
-            under_constrained_sketches.append(sketch)
-    return under_constrained_sketches
-    
-
-def get_over_constrained_sketches(doc: FreeCAD.Document):
-    """Returns all over-constrained sketches from the active FreeCAD document"""
-    sketches = get_sketches(doc)
-    over_constrained_sketches = []
-    for sketch in sketches:
-        if sketch.FullyConstrained == True and sketch.solve() != 0:
-            over_constrained_sketches.append(sketch)
-    return over_constrained_sketches
-
-def has_sketch_open_wire(sketch: Sketcher.Sketch):
-    """Returns true if sketch contains an open wire"""
-    wires = sketch.Shape.Wires
-    for wire in wires:
-        if wire.isClosed() == False:
-            return True
-    return False
-        
-def has_open_sketches(doc: FreeCAD.Document):
-    """Returns true if document contains at least one sketch with an open wire"""
-    sketches = get_sketches(doc)
-    for sketch in sketches:
-        if has_sketch_open_wire(sketch):
-            return True
-    return False
-
-# TODO: Might not work as intended.
-def doc_was_not_saved_recently(doc: FreeCAD.Document):
-    """Checks how long ago the document was modified."""
-    if doc.isSaved():
-        return False
-    date_string = doc.LastModifiedDate
-    date_format = '%Y-%m-%dT%H:%M:%SZ'
-    date_object = datetime.strptime(date_string, date_format)
-    current_time = datetime.now()
-    delta = current_time - date_object
-    if delta.total_seconds() > 300:
-        return True
-    return False
-
-
+#
+# Helper methods
+#
 def get_objects_by_type_id(doc: FreeCAD.Document, type_id: str):
     """Returns all objects of a given type from a FreeCAD document
 
@@ -246,7 +256,7 @@ def get_objects_by_type_id(doc: FreeCAD.Document, type_id: str):
              objects.append(obj)
 
     if not objects:
-        print("No object if given type found in the document")
+        print("No object of given type found in the document")
         return
     return objects
     
@@ -275,7 +285,6 @@ def get_rank(pts_reached, pts_available):
         return "Master"
 
 def generate_result_dict(fcstd_file_path=""):
-
     # Get today's date
     from datetime import datetime
     today = datetime.today()
