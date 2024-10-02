@@ -147,8 +147,8 @@ def freecad_assistant_pdf_report(freecad_report_dict, pdf_path):
 
     pdf.output(pdf_path) # Save the PDF
 
-def generate_pdf(result_dict):
-    PDF_PATH = "C:\\Users\\Aleksander\\Documents\\GitHub\\FreeCAD-Beginner-Assistant\\example.pdf"
+def run_report(result_dict):
+    PDF_PATH = "C:\\Users\\Aleksander\\Documents\\GitHub\\FreeCAD-Beginner-Assistant\\reports_pdf\\example.pdf"
     freecad_assistant_pdf_report(result_dict, PDF_PATH)
 
     import subprocess

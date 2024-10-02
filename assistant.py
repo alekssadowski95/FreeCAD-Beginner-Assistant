@@ -459,11 +459,6 @@ def generate_result_dict(fcstd_file_path=""):
     # Save the screenshot to a file
     screenshot_abs_path = FreeCADGui.activeDocument().activeView().saveImage("C:\\Users\\Aleksander\\Documents\\GitHub\\FreeCAD-Beginner-Assistant\\model_images\\test.png", 1543, 822, 'Transparent')
     print(screenshot_abs_path)
-    
-    """
-    # Get the rank for this analysis
-    rank = get_rank(pts_reached, pts_available)
-    """
 
     result_dict = {
         "date" : str(today),
@@ -476,11 +471,11 @@ def generate_result_dict(fcstd_file_path=""):
     }
 
     result_dict["best-practices"].append(
-        has_over_constrained_sketch(FreeCAD.ActiveDocument())
+        has_under_constrained_sketch(FreeCAD.ActiveDocument)
     )
 
     result_dict["best-practices"].append(
-        has_under_constrained_sketch(FreeCAD.ActiveDocument())
+        has_over_constrained_sketch(FreeCAD.ActiveDocument)
     )
 
     # Populate points fields in result dict
@@ -496,10 +491,13 @@ def generate_result_dict(fcstd_file_path=""):
         else:
             pass
 
-    result_dict["pts-reached"] = pts_reached
-    result_dict["pts-available"] = pts_available
+    result_dict["pts-reached"] = str(pts_reached)
+    result_dict["pts-available"] = str(pts_available)
 
-        
+    # Get the rank for this analysis
+    rank = get_rank(pts_reached, pts_available)
+    result_dict["rank"] = rank
+
     return result_dict
 
 

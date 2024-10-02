@@ -5,7 +5,7 @@ import FreeCAD # noqa
 import FreeCADGui # noqa
 
 from assistant import generate_result_dict
-from pdfgen import generate_pdf
+from pdfgen import run_report
 from config import addon_work_dir
 
 
@@ -33,7 +33,7 @@ class AnalyseDocumentCommand:
         # 1. generate analysis report dict
         result_dict = generate_result_dict()
         # 2. Generate PDF from report dict and open PDF in default viewer
-        generate_pdf(result_dict)
+        run_report(result_dict)
 
     def IsActive(self):
         """Return True when the command should be active or False when it should be disabled (greyed)."""
