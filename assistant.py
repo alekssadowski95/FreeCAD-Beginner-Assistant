@@ -36,7 +36,7 @@ def has_referenced_face_for_sketch():
         "solution" : "Reference one of the Origin planes or create a new plane, that also only references one of the Origin planes instead.",
         "status" : "Unchecked"
     }
-    return NotImplementedError
+    return result
 
 # ID 2: You have created a sketch, that is under constrained.
 def has_under_constrained_sketch(doc: FreeCAD.Document):
@@ -79,7 +79,7 @@ def is_body_not_symmetric():
         "solution" : "Try to create your 3D model symmetric in relation to as many Origin planes as possible.",
         "status" : "Unchecked"
     }
-    raise NotImplementedError 
+    return result 
 
 # ID 5: You have created a complex sketch that uses a lot of geometrical elements and constraints.
 def has_complex_sketch():
@@ -90,7 +90,7 @@ def has_complex_sketch():
         "solution" : "Split up your complex sketch into multiple simple sketches if possible.",
         "status" : "Unchecked"
     }
-    raise NotImplementedError 
+    return result 
 
 # ID 6: You have not given your sketch a meaningful name.
 def has_not_meaningful_sketch_name():
@@ -101,7 +101,7 @@ def has_not_meaningful_sketch_name():
         "solution" : "Rename your sketch to something that represents its purpose.",
         "status" : "Unchecked"
     }
-    raise NotImplementedError 
+    return result 
 
 # ID 7: Your file size is getting large.
 def is_file_size_large():
@@ -112,7 +112,7 @@ def is_file_size_large():
         "solution" : "Save your document regularily.",
         "status" : "Unchecked"
     }
-    raise NotImplementedError 
+    return result 
 
 # ID 8: You have created a new document that might not be using version control.
 def is_not_version_controled():
@@ -123,7 +123,7 @@ def is_not_version_controled():
         "solution" : "Use a version control, like git or Subversion. To host your files using git you can use Github.",
         "status" : "Unchecked"
     }
-    raise NotImplementedError 
+    return result 
 
 # ID 9: Your document contains at least one error.
 def has_doc_errors():
@@ -134,7 +134,7 @@ def has_doc_errors():
         "solution" : "Resolve all errors first, before continuing with your work on this document. Thank me later.",
         "status" : "Unchecked"
     }
-    raise NotImplementedError 
+    return result 
 
 # ID 10: Your Part Design body contains many features.
 def has_complex_bodies(doc: FreeCAD.Document):
@@ -161,7 +161,7 @@ def high_ram_usage():
         "solution" : "Free up some memory by closing other programs or files that you don't need right now.",
         "status" : "Unchecked"
     }
-    return NotImplementedError
+    return result 
 
 # ID 12: Your system cpu usage is very high.
 # TODO: Requires 'psutil' library, which is not included with the Python interpreter integrated in FreeCAD
@@ -173,7 +173,7 @@ def high_cpu_usage():
         "solution" : "Free up some cpu resources by closing other programs or files that you don't need right now.",
         "status" : "Unchecked"
     }
-    return NotImplementedError
+    return result 
 
 # ID 13: Your system will soon run out of disk space.
 # TODO: Requires 'psutil' library, which is not included with the Python interpreter integrated in FreeCAD
@@ -185,7 +185,7 @@ def high_disk_usage():
         "solution" : "Free up some disk space by deleting or moving files that you don't need.",
         "status" : "Unchecked"
     }
-    return NotImplementedError
+    return result 
 
 # ID 14: Your FreeCAD program version is not up to date.
 def has_old_freecad_version():
@@ -282,7 +282,7 @@ def has_valid_filename():
         "solution" : "Rename your FreeCAD document to something that's compatible with Linux. Use underscores or hyphens for multipart names (e.g. 'my-own-spaceship.FCStd'). Remember that Linux is case-sensitive.",
         "status" : "Unchecked"
     }
-    return NotImplementedError
+    return result 
 
 # ID 20: Your sketch intersects itself, leading to invalid geometry.
 def check_if_edges_intersect(edge1, edge2):
@@ -325,7 +325,7 @@ def is_export_standard_format():
         "solution" : "'Export' or 'Save As' your part in a standard file format.",
         "status" : "Unchecked"
     }
-    return NotImplementedError
+    return result 
 
 #
 # Helper methods
@@ -471,6 +471,10 @@ def generate_result_dict(fcstd_file_path=""):
     }
 
     result_dict["best-practices"].append(
+        has_referenced_face_for_sketch()
+    )
+
+    result_dict["best-practices"].append(
         has_under_constrained_sketch(FreeCAD.ActiveDocument)
     )
 
@@ -478,6 +482,26 @@ def generate_result_dict(fcstd_file_path=""):
         has_over_constrained_sketch(FreeCAD.ActiveDocument)
     )
 
+    result_dict["best-practices"].append(
+        is_body_not_symmetric()
+    )
+
+    result_dict["best-practices"].append(
+        has_complex_sketch()
+    )
+
+    result_dict["best-practices"].append(
+        has_not_meaningful_sketch_name()
+    )
+
+    result_dict["best-practices"].append(
+        is_not_version_controled()
+    )
+
+    result_dict["best-practices"].append(
+        has_doc_errors()
+    )
+    
     # Populate points fields in result dict
     pts_reached = 0
     pts_available = 0
