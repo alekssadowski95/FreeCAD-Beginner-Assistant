@@ -1,53 +1,57 @@
 from fpdf import FPDF
 from fpdf.fonts import FontFace
+import os
 
 from config import addon_work_dir
 
+path = os.path.join(os.path.dirname(__file__))
+pathImages = os.path.join(path, "model_images")
 
-ONE_INCH = 25.4 # millimeters
+ONE_INCH = 25.4  # millimeters
 
 
 def freecad_assistant_pdf_report_header(freecad_report_pdf):
-    freecad_report_pdf.set_font("Arial", style='B', size=21)
-    freecad_report_pdf.cell(200, 10, txt="Report", ln=True, align='L')
+    freecad_report_pdf.set_font("Arial", style="B", size=21)
+    freecad_report_pdf.cell(200, 10, txt="Report", ln=True, align="L")
 
-    freecad_report_pdf.set_font("Arial", style='', size=8.5)
+    freecad_report_pdf.set_font("Arial", style="", size=8.5)
     freecad_report_pdf.set_text_color(128, 128, 128)
-    freecad_report_pdf.cell(200, 5, txt="FreeCAD Beginner Assistant", ln=True, align='L')
+    freecad_report_pdf.cell(200, 5, txt="FreeCAD Beginner Assistant", ln=True, align="L")
 
     return freecad_report_pdf
+
 
 def freecad_assistant_pdf_report_summary_text(freecad_report_pdf, filename, run_date, rank, points_got, points_max):
     freecad_report_pdf.set_text_color(0, 0, 0)
-    freecad_report_pdf.set_font("Arial", style='', size=13.5)
-    freecad_report_pdf.cell(200, 8, txt="Points: " + points_got + " / " + points_max, ln=True, align='L')
-    freecad_report_pdf.cell(200, 8, txt="Rank: " + rank, ln=True, align='L')
+    freecad_report_pdf.set_font("Arial", style="", size=13.5)
+    freecad_report_pdf.cell(200, 8, txt="Points: " + points_got + " / " + points_max, ln=True, align="L")
+    freecad_report_pdf.cell(200, 8, txt="Rank: " + rank, ln=True, align="L")
 
-    freecad_report_pdf.set_font("Arial", style='', size=8.5)
-    freecad_report_pdf.cell(200, 6, txt="Date: " + run_date, ln=True, align='L')
-    freecad_report_pdf.cell(200, 6, txt="File: " + filename, ln=True, align='L')
+    freecad_report_pdf.set_font("Arial", style="", size=8.5)
+    freecad_report_pdf.cell(200, 6, txt="Date: " + run_date, ln=True, align="L")
+    freecad_report_pdf.cell(200, 6, txt="File: " + filename, ln=True, align="L")
 
     return freecad_report_pdf
 
+
 def freecad_assistant_convert_dict_data_to_array_data(freecad_best_practices_dict):
-    freecad_report_table_array = [( # Header
-        "ID",
-        "What the user has done",
-        "What negative (and positive) effect that has",
-        "How to resolve the issue",
-        "Status"
-    ),]
+    freecad_report_table_array = [
+        (  # Header
+            "ID",
+            "What the user has done",
+            "What negative (and positive) effect that has",
+            "How to resolve the issue",
+            "Status",
+        ),
+    ]
 
     for item in freecad_best_practices_dict:
-        freecad_report_table_array.append((
-            str(item["id"]),
-            item["action"],
-            item["effect"],
-            item["solution"],
-            item["status"]
-        ))
+        freecad_report_table_array.append(
+            (str(item["id"]), item["action"], item["effect"], item["solution"], item["status"])
+        )
 
     return freecad_report_table_array
+
 
 def freecad_assistant_pdf_report_table(freecad_report_pdf, freecad_report_table_array):
     table_width = freecad_report_pdf.w - (2 * ONE_INCH)
@@ -56,16 +60,16 @@ def freecad_assistant_pdf_report_table(freecad_report_pdf, freecad_report_table_
     all_equal_col_width = table_width / num_cols
 
     # Custom column variables
-    id_col_width = all_equal_col_width * (1/3)
+    id_col_width = all_equal_col_width * (1 / 3)
     id_col_neg_space = all_equal_col_width - id_col_width
-    status_col_width = all_equal_col_width * (2/3)
+    status_col_width = all_equal_col_width * (2 / 3)
     status_col_neg_space = all_equal_col_width - status_col_width
     total_neg_space = id_col_neg_space + status_col_neg_space
     custom_col_width_count = 2
 
     # Text column variables
     equal_col_count = num_cols - custom_col_width_count
-    text_col_width = all_equal_col_width + total_neg_space/equal_col_count
+    text_col_width = all_equal_col_width + total_neg_space / equal_col_count
 
     freecad_report_pdf.set_font("Arial", size=10)
     freecad_report_pdf.set_line_width(0.2)
@@ -75,13 +79,14 @@ def freecad_assistant_pdf_report_table(freecad_report_pdf, freecad_report_table_
     headings_style = FontFace(emphasis="BOLD", color=white, fill_color=dark_blue)
 
     with freecad_report_pdf.table(
-    headings_style=headings_style,
-    repeat_headings=0,
-    text_align="LEFT",
-    line_height= 6,
-    cell_fill_color=light_blue, cell_fill_mode="ROWS",
-    width=table_width,
-    col_widths=(id_col_width, text_col_width, text_col_width, text_col_width, status_col_width)
+        headings_style=headings_style,
+        repeat_headings=0,
+        text_align="LEFT",
+        line_height=6,
+        cell_fill_color=light_blue,
+        cell_fill_mode="ROWS",
+        width=table_width,
+        col_widths=(id_col_width, text_col_width, text_col_width, text_col_width, status_col_width),
     ) as table:
         for data_row in freecad_report_table_array:
             row = table.row()
@@ -90,12 +95,19 @@ def freecad_assistant_pdf_report_table(freecad_report_pdf, freecad_report_table_
 
     return freecad_report_pdf
 
+
 def freecad_assistant_pdf_report_footer(freecad_report_pdf):
-    freecad_report_pdf.image("C:\\Users\\Aleksander\\Documents\\GitHub\\FreeCAD-Beginner-Assistant\\icons\\owl-2.png", x=ONE_INCH, y=freecad_report_pdf.y, w=20)
+    screenshot = os.path.join(pathImages, "owl-2.png")
+    freecad_report_pdf.image(
+        screenshot,
+        x=ONE_INCH,
+        y=freecad_report_pdf.y,
+        w=20,
+    )
 
-    freecad_report_pdf.ln(50) # Add Space in millimeters
+    freecad_report_pdf.ln(50)  # Add Space in millimeters
 
-    freecad_report_pdf.set_font("Arial", style='', size=8.5)
+    freecad_report_pdf.set_font("Arial", style="", size=8.5)
 
     # Define text with hyperlinks
     text1 = "This report was auto-generated with the "
@@ -112,9 +124,16 @@ def freecad_assistant_pdf_report_footer(freecad_report_pdf):
     freecad_report_pdf.write(6, text2)
     freecad_report_pdf.ln(6)
 
-    freecad_report_pdf.cell(200, 6, txt="Do you like getting automatic feedback while working with FreeCAD? Help us improve the project.", ln=True, align='L')
+    freecad_report_pdf.cell(
+        200,
+        6,
+        txt="Do you like getting automatic feedback while working with FreeCAD? Help us improve the project.",
+        ln=True,
+        align="L",
+    )
 
     return freecad_report_pdf
+
 
 # Takes in a formatted dict to generate a FreeCAD assistant PDF report.
 def freecad_assistant_pdf_report(freecad_report_dict, pdf_path):
@@ -122,9 +141,11 @@ def freecad_assistant_pdf_report(freecad_report_dict, pdf_path):
     filename = freecad_report_dict["file"]
     model_image_name = freecad_report_dict["screenshot"]
     points_got = freecad_report_dict["pts-reached"]
-    points_max= freecad_report_dict["pts-available"]
+    points_max = freecad_report_dict["pts-available"]
     rank = freecad_report_dict["rank"]
-    freecad_report_table_array = freecad_assistant_convert_dict_data_to_array_data(freecad_report_dict["best-practices"])
+    freecad_report_table_array = freecad_assistant_convert_dict_data_to_array_data(
+        freecad_report_dict["best-practices"]
+    )
 
     pdf = FPDF()
 
@@ -135,29 +156,31 @@ def freecad_assistant_pdf_report(freecad_report_dict, pdf_path):
 
     pdf.add_page()
 
-    pdf = freecad_assistant_pdf_report_header(pdf) # Header
-    pdf.ln(10) # Add Space in millimeters
+    pdf = freecad_assistant_pdf_report_header(pdf)  # Header
+    pdf.ln(10)  # Add Space in millimeters
     pdf.image(model_image_name, x=ONE_INCH, y=pdf.y, w=(pdf.w - (2 * ONE_INCH)))
-    pdf.ln(90) # Add Space in millimeters
+    pdf.ln(90)  # Add Space in millimeters
     pdf = freecad_assistant_pdf_report_summary_text(pdf, filename, run_date, rank, points_got, points_max)
-    pdf.ln(10) # Add Space in millimeters
-    pdf = freecad_assistant_pdf_report_table(pdf, freecad_report_table_array) # Table
-    pdf.ln(10) # Add Space in millimeters
-    pdf = freecad_assistant_pdf_report_footer(pdf) # Footer
+    pdf.ln(10)  # Add Space in millimeters
+    pdf = freecad_assistant_pdf_report_table(pdf, freecad_report_table_array)  # Table
+    pdf.ln(10)  # Add Space in millimeters
+    pdf = freecad_assistant_pdf_report_footer(pdf)  # Footer
 
-    pdf.output(pdf_path) # Save the PDF
+    pdf.output(pdf_path)  # Save the PDF
+
 
 def run_report(result_dict):
-    PDF_PATH = "C:\\Users\\Aleksander\\Documents\\GitHub\\FreeCAD-Beginner-Assistant\\reports_pdf\\example.pdf"
+    path = os.path.join(os.path.dirname(__file__))
+    PDF_PATH = os.path.join(path, "reports_pdf, example.pdf")
     freecad_assistant_pdf_report(result_dict, PDF_PATH)
 
     import subprocess
     import platform
     import os
 
-    if platform.system() == 'Darwin':       # macOS
-        subprocess.call(('open', PDF_PATH))
-    elif platform.system() == 'Windows':    # Windows
+    if platform.system() == "Darwin":  # macOS
+        subprocess.call(("open", PDF_PATH))
+    elif platform.system() == "Windows":  # Windows
         os.startfile(PDF_PATH)
-    else:                                   # Linux
-        subprocess.call(('xdg-open', PDF_PATH))
+    else:  # Linux
+        subprocess.call(("xdg-open", PDF_PATH))
