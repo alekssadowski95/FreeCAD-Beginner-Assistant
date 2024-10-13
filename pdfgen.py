@@ -1,6 +1,9 @@
 from fpdf import FPDF
 from fpdf.fonts import FontFace
 import os
+import subprocess
+import platform
+
 
 from config import addon_work_dir
 
@@ -173,10 +176,6 @@ def run_report(result_dict):
     path = os.path.join(os.path.dirname(__file__))
     PDF_PATH = os.path.join(path, "reports_pdf, example.pdf")
     freecad_assistant_pdf_report(result_dict, PDF_PATH)
-
-    import subprocess
-    import platform
-    import os
 
     if platform.system() == "Darwin":  # macOS
         subprocess.call(("open", PDF_PATH))
