@@ -3,12 +3,23 @@ from fpdf.fonts import FontFace
 import os
 import subprocess
 import platform
+import sys
 
 
 from config import addon_work_dir
 
-path = os.path.join(os.path.dirname(__file__))
-pathImages = os.path.join(path, "model_images")
+Path = os.path.join(os.path.dirname(__file__))
+PathImages = os.path.join(Path, "model_images")
+PathIcons = os.path.join(Path, "icons")
+PathScreenshots = os.path.join(Path, "Screenshots")
+PathDocs = os.path.join(Path, "Docs")
+PathReports = os.path.join(Path, "reports_pdf")
+sys.path.append(Path)
+sys.path.append(PathImages)
+sys.path.append(PathIcons)
+sys.path.append(PathScreenshots)
+sys.path.append(PathDocs)
+sys.path.append(PathReports)
 
 ONE_INCH = 25.4  # millimeters
 
@@ -100,7 +111,7 @@ def freecad_assistant_pdf_report_table(freecad_report_pdf, freecad_report_table_
 
 
 def freecad_assistant_pdf_report_footer(freecad_report_pdf):
-    screenshot = os.path.join(pathImages, "owl-2.png")
+    screenshot = os.path.join(PathIcons, "owl-2.png")
     freecad_report_pdf.image(
         screenshot,
         x=ONE_INCH,
@@ -173,8 +184,7 @@ def freecad_assistant_pdf_report(freecad_report_dict, pdf_path):
 
 
 def run_report(result_dict):
-    path = os.path.join(os.path.dirname(__file__))
-    PDF_PATH = os.path.join(path, "reports_pdf, example.pdf")
+    PDF_PATH = os.path.join(PathReports, "example.pdf")
     freecad_assistant_pdf_report(result_dict, PDF_PATH)
 
     if platform.system() == "Darwin":  # macOS

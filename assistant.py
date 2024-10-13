@@ -4,9 +4,20 @@ import FreeCAD  # noqa
 import FreeCADGui  # noqa
 import Sketcher  # noqa
 import os
+import sys
 
-path = os.path.join(os.path.dirname(__file__))
-pathImages = os.path.join(path, "model_images")
+Path = os.path.join(os.path.dirname(__file__))
+PathImages = os.path.join(Path, "model_images")
+PathIcons = os.path.join(Path, "icons")
+PathScreenshots = os.path.join(Path, "Screenshots")
+PathDocs = os.path.join(Path, "Docs")
+PathReports = os.path.join(Path, "reports_pdf")
+sys.path.append(Path)
+sys.path.append(PathImages)
+sys.path.append(PathIcons)
+sys.path.append(PathScreenshots)
+sys.path.append(PathDocs)
+sys.path.append(PathReports)
 
 """ From own testing:
 
@@ -493,7 +504,7 @@ def generate_result_dict(fcstd_file_path=""):
     FreeCADGui.SendMsgToActiveView("ViewFit")
 
     # Save the screenshot to a file
-    screenshot = os.path.join(pathImages, "test.png")
+    screenshot = os.path.join(PathImages, "test.png")
     screenshot_abs_path = (
         FreeCADGui.activeDocument()
         .activeView()
