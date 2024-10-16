@@ -6,7 +6,7 @@ import platform
 import sys
 
 
-from config import addon_work_dir
+from fba_config import addon_work_dir
 
 Path = os.path.join(os.path.dirname(__file__))
 PathImages = os.path.join(Path, "model_images")

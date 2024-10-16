@@ -6,7 +6,7 @@ import FreeCADGui # noqa
 
 from assistant import generate_result_dict
 from pdfgen import run_report
-from config import addon_work_dir
+from fba_config import addon_work_dir
 
 
 class AnalyseDocumentCommand:
