@@ -7,7 +7,7 @@
   <author>Aleksander Sadowski(https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant)</author>
   <maintainer email="alekey@hotmail.de">Aleksander Sadowski</maintainer>
   <maintainer email="elizabethharasymiw@gmail.com">Elizabeth Harasymiw</maintainer>
-  <license file="LICENSE">LGPLv2.1</license>
+  <license file="LICENSE">LGPL-2.1-or-later</license>
   <url type="repository" branch="main">https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant</url>
   <url type="bugtracker">https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant/issues</url>
   <icon>Icons/FreeCAD-Beginner-Assistant.svg</icon>
