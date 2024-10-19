@@ -229,11 +229,11 @@ def has_old_freecad_version():
     minor = 21
     patch = 2
     version_info = FreeCAD.Version()
-    if version_info[0] < major:
+    if int(version_info[0]) < major:
         return True
-    if version_info[1] < minor:
+    if int(version_info[1]) < minor:
         return True
-    if version_info[2] < patch:
+    if int(version_info[2]) < patch:
         return True
     return False
 
