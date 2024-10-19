@@ -17,6 +17,7 @@
       <classname>FreeCAD-Beginner-Assistant</classname>
       <subdirectory>./</subdirectory>
       <icon>Icons/FreeCAD-Beginner-Assistant.svg</icon>
+      <depend type="python">fpdf</depend>
     </workbench>
   </content>
 
