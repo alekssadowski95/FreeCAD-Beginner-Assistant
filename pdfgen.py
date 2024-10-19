@@ -1,5 +1,5 @@
-from fpdf import FPDF
-from fpdf.fonts import FontFace
+from .fpdf import FPDF
+from .fpdf.fonts import FontFace
 import os
 import subprocess
 import platform
