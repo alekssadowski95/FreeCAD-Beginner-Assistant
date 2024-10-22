@@ -5,7 +5,7 @@
 
 The FreeCAD Beginner Assistant gives interactive feedback on best practices for beginning FreeCAD users. It does it by analysing a FreeCAD FCStd-file containing at least one part made with the Part Design and Sketcher workbenches and gives real-time or asynchronous feedback, based on best practices, on what was done well and what can be improved by the user.
 
-![FreeCAD Beginner Assistant in the Report View](Screenshots/report-view-freecad-beginner-assistant.jpg)
+![FreeCAD Beginner Assistant Overview](freecad-beginner-assistant-overview.png)
 
 
 ## Installation
@@ -38,7 +38,6 @@ The FreeCAD Beginner Assistant gives interactive feedback on best practices for 
 
 ## Contact
 * For questions, comments, feature requests, and improvements, please open an issue at: [issue tracker](https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant/issues)
-* Also we can discuss at: (TODO: create FreeCAD forum thread for this project, when MVP is ready)
 
 ## Vision
 With FCViewer now having more than 1000 uploads, I have analysed the FreeCAD files that were uploaded. Many uploaded files are not created using established best practices known in the FreeCAD community and from CAD specialists in general. With the FreeCAD Beginner Assistant we want to teach users to apply these known best practices. 
