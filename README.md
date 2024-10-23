@@ -1,4 +1,4 @@
-<img src="bolt.jpg" alt="Bolt - FreeCAD Beginner Assistant Owl Icon" style="max-width:400px;"/>
+<img src="bolt.jpg" alt="Bolt - FreeCAD Beginner Assistant Owl Icon" style="max-width:50%;"/>
 
 # FreeCAD Beginner Assistant (FreeCAD Addon)
 
