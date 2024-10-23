@@ -1,4 +1,4 @@
-![FreeCAD Beginner Assistant Owl Icon](icons/owl-2.png)
+![Bolt - FreeCAD Beginner Assistant Owl Icon](bolt.jpg)
 
 # FreeCAD Beginner Assistant (FreeCAD Addon)
 
