@@ -7,7 +7,7 @@ The FreeCAD Beginner Assistant gives interactive feedback on best practices for 
 
 ![FreeCAD Beginner Assistant Overview](freecad-beginner-assistant-overview.png)
 
-## Getgting Started
+## Getting Started
 1. Install the Beginner Assistant through the Addon Manager.
 2. Open a FreeCAD Document, made with Part Design and Sketcher workbenches.
 3. Switch to the Beginner Assistant workbench
