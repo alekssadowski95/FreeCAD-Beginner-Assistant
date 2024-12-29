@@ -58,7 +58,7 @@ The FreeCAD Beginner Assistant gives interactive feedback on best practices for 
 ## Documents
 * ![The Psychology of Bolt - Part 1](the-psychology-of-bolt-freecad.pdf)
 * ![The Psychology of Bolt - Part 2](the-psychology-of-bolt-freecad-2.pdf)
-* ![The Tale of Bolt](The Tale of Bolt-3.pdf)
+* ![The Tale of Bolt](The-Tale-of-Bolt-3.pdf)
 
 
 ## License
