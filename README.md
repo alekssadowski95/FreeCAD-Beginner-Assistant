@@ -20,16 +20,6 @@ The FreeCAD Beginner Assistant gives interactive feedback on best practices for 
 2. Copy the folder "FreeCAD-Beginner-Assistant" to "FreeCAD/Mod"
 3. Run FreeCAD (The Addon is automatically recognized at startup)
 
-<span style="white-space: nowrap;">
-<img src="bolt-happy-4.png" alt="Bolt happy level 4 mood" style="width:240px;"/>
-<img src="bolt-happy-3.png" alt="Bolt happy level 3 mood" style="width:240px;"/>
-<img src="bolt-happy-2.png" alt="Bolt happy level 2 mood" style="width:240px;"/>
-<img src="bolt-happy-1.png" alt="Bolt happy level 1 mood" style="width:240px;"/>
-<img src="bolt-neutral.png" alt="Bolt neutral mood" style="width:240px;"/>
-<img src="bolt-sad.png" alt="Bolt sad mood" style="width:240px;"/>
-</span>
-
-
 #### Example install path locations by operating system:
 
 * Linux:
@@ -47,6 +37,16 @@ The FreeCAD Beginner Assistant gives interactive feedback on best practices for 
 * Windows:
 
       `C:\Users\user_name\AppData\Roaming\FreeCAD\Mod\FreeCAD-Beginner-Assistant`
+
+
+<span style="white-space: nowrap;">
+<img src="bolt-happy-4.png" alt="Bolt happy level 4 mood" style="width:240px;"/>
+<img src="bolt-happy-3.png" alt="Bolt happy level 3 mood" style="width:240px;"/>
+<img src="bolt-happy-2.png" alt="Bolt happy level 2 mood" style="width:240px;"/>
+<img src="bolt-happy-1.png" alt="Bolt happy level 1 mood" style="width:240px;"/>
+<img src="bolt-neutral.png" alt="Bolt neutral mood" style="width:240px;"/>
+<img src="bolt-sad.png" alt="Bolt sad mood" style="width:240px;"/>
+</span>
 
 
 
