@@ -13,6 +13,8 @@ The FreeCAD Beginner Assistant gives interactive feedback on best practices for 
 3. Switch to the Beginner Assistant workbench
 4. Run the Create Report command.
 
+![FreeCAD Beginner Assistant Story Comic](freecad-beginner-assistant-bolt-comic.png)
+
 ## Installation
 1. Download this repo
 2. Copy the folder "FreeCAD-Beginner-Assistant" to "FreeCAD/Mod"
