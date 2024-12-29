@@ -10,6 +10,8 @@ The FreeCAD Beginner Assistant gives interactive feedback on best practices for 
 
 
 **Real-time feedback**
+![FreeCAD Beginner Assistant Real-Time Feedback](freecad-beginner-assistant-real-time-feedback.png)
+
 
 ## Getting Started
 1. Install the Beginner Assistant through the FreeCAD Addon Manager.
