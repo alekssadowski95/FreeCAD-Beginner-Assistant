@@ -74,4 +74,4 @@ With FCViewer now having more than 1000 uploads, I have analysed the FreeCAD fil
 - Get asynchronous feedback with best practices in FCViewer.
 - Get real-time feedback with best practices in FreeCAD.
 
--> Increase the quality of community-created projects and increase the popularity of FreeCAD as a result.
+-> **Increase the quality of community-created projects and increase the popularity of FreeCAD as a result.**
