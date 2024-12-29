@@ -5,10 +5,11 @@
 
 The FreeCAD Beginner Assistant gives interactive feedback on best practices for beginning FreeCAD users. It does it by analysing a FreeCAD FCStd-file containing at least one part made with the Part Design and Sketcher workbenches and gives real-time or asynchronous feedback, based on best practices, on what was done well and what can be improved by the user.
 
-* Report-type (asynchronous) feedback
+**Report-type (asynchronous) feedback**
 ![FreeCAD Beginner Assistant Overview](freecad-beginner-assistant-overview.png)
 
-* Real-time feedback
+
+**Real-time feedback**
 
 ## Getting Started
 1. Install the Beginner Assistant through the FreeCAD Addon Manager.
