@@ -6,7 +6,7 @@
 The FreeCAD Beginner Assistant gives interactive feedback on best practices for beginning FreeCAD users. It does it by analysing a FreeCAD FCStd-file containing at least one part made with the Part Design and Sketcher workbenches and gives real-time or asynchronous feedback, based on best practices, on what was done well and what can be improved by the user.
 
 **Report-type (asynchronous) feedback:**
-Gives feedback on if best practices have been applied after the creation of the Part. The feedback is given in form of a PDF report. It would also be beneficial for the report type fedeback to be implemented in the FreeCAD Online Viewer "FCViewer".
+Gives feedback on if best practices have been applied after the creation of the Part. The feedback is given in form of a PDF report. It would also be beneficial for the report type feedback to be implemented in the FreeCAD Online Viewer "FCViewer".
 ![FreeCAD Beginner Assistant Overview](freecad-beginner-assistant-overview.png)
 
 
