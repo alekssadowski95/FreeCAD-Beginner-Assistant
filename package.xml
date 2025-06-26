@@ -10,13 +10,13 @@
   <license file="LICENSE">LGPL-2.1-or-later</license>
   <url type="repository" branch="main">https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant</url>
   <url type="bugtracker">https://github.com/alekssadowski95/FreeCAD-Beginner-Assistant/issues</url>
-  <icon>Icons/FreeCAD-Beginner-Assistant.svg</icon>
+  <icon>icons/freecad-beginner-assistant-workbench.svg</icon>
 
   <content>
     <workbench>
       <classname>FreeCAD-Beginner-Assistant</classname>
       <subdirectory>./</subdirectory>
-      <icon>Icons/FreeCAD-Beginner-Assistant.svg</icon>
+      <icon>icons/freecad-beginner-assistant-workbench.svg</icon>
       <depend type="python">fpdf2</depend>
     </workbench>
   </content>
